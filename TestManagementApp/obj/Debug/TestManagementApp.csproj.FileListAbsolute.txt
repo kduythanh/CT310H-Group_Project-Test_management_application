@@ -1,0 +1,13 @@
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\bin\Debug\TestManagementApp.exe.config
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\bin\Debug\TestManagementApp.exe
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\bin\Debug\TestManagementApp.pdb
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.csproj.AssemblyReference.cache
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.frmDangNhap.resources
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.Properties.Resources.resources
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.csproj.GenerateResource.cache
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.csproj.CoreCompileInputs.cache
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.exe
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.pdb
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.frmTrangChuAdmin.resources
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.frmTrangChuGV.resources
+E:\Phat_trien_UD_NET\Project\CT310H-Group_Project-Test_management_application\TestManagementApp\obj\Debug\TestManagementApp.frmTrangChuHS.resources

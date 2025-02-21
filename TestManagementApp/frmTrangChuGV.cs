@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TestManagementApp
 {
-    public partial class Form1 : Form
+    public partial class frmTrangChuGV : Form
     {
-        public Form1()
+        public frmTrangChuGV()
         {
             InitializeComponent();
         }
