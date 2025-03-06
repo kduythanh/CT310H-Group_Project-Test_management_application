@@ -11,32 +11,32 @@ namespace TestManagementApp
     {
         public static SqlConnection con;
 
-        //public static bool OpenConnection()
-        //{
-        //    try
-        //    {
-        //        // Sửa lại tên server cho phù hợp với mỗi máy
-        //        con = new SqlConnection("Server=DESKTOP-UCGD4BF\\SQLEXPRESS;Database=QL_TRAC_NGHIEM;Integrated Security=true");
-        //        con.Open();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        public static bool OpenConnection()
+        {
+            try
+            {
+                // Sửa lại tên server cho phù hợp với mỗi máy
+                con = new SqlConnection("Server=DESKTOP-UCGD4BF\\SQLEXPRESS;Database=QL_TRAC_NGHIEM;Integrated Security=true");
+                con.Open();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
 
-        //public static bool CloseConnection()
-        //{
-        //    try
-        //    {
-        //        con.Close();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        public static bool CloseConnection()
+        {
+            try
+            {
+                con.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

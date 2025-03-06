@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChuGV));
             this.lblHoTenGV = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtGiaoVien = new System.Windows.Forms.TextBox();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblDSDeThi = new System.Windows.Forms.Label();
             this.dgvDeThi = new System.Windows.Forms.DataGridView();
             this.btnThemDeThi = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnXemKetQua = new System.Windows.Forms.Button();
             this.grpChucNangKhac = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeThi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpChucNangKhac.SuspendLayout();
@@ -52,18 +52,19 @@
             resources.ApplyResources(this.lblHoTenGV, "lblHoTenGV");
             this.lblHoTenGV.Name = "lblHoTenGV";
             // 
-            // textBox1
+            // txtGiaoVien
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.txtGiaoVien, "txtGiaoVien");
+            this.txtGiaoVien.Name = "txtGiaoVien";
             // 
-            // button1
+            // btnDangXuat
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDangXuat.BackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.btnDangXuat, "btnDangXuat");
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // lblDSDeThi
             // 
@@ -121,16 +122,16 @@
             // 
             // grpChucNangKhac
             // 
-            this.grpChucNangKhac.Controls.Add(this.button2);
+            this.grpChucNangKhac.Controls.Add(this.btnDoiMatKhau);
             resources.ApplyResources(this.grpChucNangKhac, "grpChucNangKhac");
             this.grpChucNangKhac.Name = "grpChucNangKhac";
             this.grpChucNangKhac.TabStop = false;
             // 
-            // button2
+            // btnDoiMatKhau
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnDoiMatKhau, "btnDoiMatKhau");
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.UseVisualStyleBackColor = true;
             // 
             // frmTrangChuGV
             // 
@@ -138,8 +139,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grpChucNangKhac);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnDangXuat);
+            this.Controls.Add(this.txtGiaoVien);
             this.Controls.Add(this.lblHoTenGV);
             this.Name = "frmTrangChuGV";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeThi)).EndInit();
@@ -154,8 +155,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblHoTenGV;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtGiaoVien;
+        private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Label lblDSDeThi;
         private System.Windows.Forms.DataGridView dgvDeThi;
         private System.Windows.Forms.Button btnThemDeThi;
@@ -165,6 +166,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnXemKetQua;
         private System.Windows.Forms.GroupBox grpChucNangKhac;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDoiMatKhau;
     }
 }

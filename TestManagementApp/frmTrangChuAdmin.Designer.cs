@@ -28,29 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboLoaiTaiKhoan = new System.Windows.Forms.ComboBox();
             this.lblChonMonHoc = new System.Windows.Forms.Label();
             this.lblHoTenGV = new System.Windows.Forms.Label();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDSTaiKhoan = new System.Windows.Forms.DataGridView();
             this.btnSuaCauHoi = new System.Windows.Forms.Button();
             this.btnSuaDeThi = new System.Windows.Forms.Button();
             this.btnThemDeThi = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cboLoaiTaiKhoan
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboLoaiTaiKhoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLoaiTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiTaiKhoan.FormattingEnabled = true;
+            this.cboLoaiTaiKhoan.Items.AddRange(new object[] {
             "Giáo viên",
             "Học sinh"});
-            this.comboBox1.Location = new System.Drawing.Point(205, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(349, 29);
-            this.comboBox1.TabIndex = 20;
+            this.cboLoaiTaiKhoan.Location = new System.Drawing.Point(205, 74);
+            this.cboLoaiTaiKhoan.Name = "cboLoaiTaiKhoan";
+            this.cboLoaiTaiKhoan.Size = new System.Drawing.Size(349, 29);
+            this.cboLoaiTaiKhoan.TabIndex = 20;
             // 
             // lblChonMonHoc
             // 
@@ -87,6 +88,7 @@
             this.btnDangXuat.TabIndex = 22;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // label1
             // 
@@ -99,13 +101,13 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Danh sách tài khoản:";
             // 
-            // dataGridView1
+            // dgvDSTaiKhoan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 164);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(514, 243);
-            this.dataGridView1.TabIndex = 24;
+            this.dgvDSTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSTaiKhoan.Location = new System.Drawing.Point(40, 164);
+            this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
+            this.dgvDSTaiKhoan.Size = new System.Drawing.Size(514, 243);
+            this.dgvDSTaiKhoan.TabIndex = 24;
             // 
             // btnSuaCauHoi
             // 
@@ -150,15 +152,15 @@
             this.Controls.Add(this.btnSuaCauHoi);
             this.Controls.Add(this.btnSuaDeThi);
             this.Controls.Add(this.btnThemDeThi);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDSTaiKhoan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.lblHoTenGV);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboLoaiTaiKhoan);
             this.Controls.Add(this.lblChonMonHoc);
             this.Name = "frmTrangChuAdmin";
             this.Text = "Trang chủ Quản trị viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,12 +168,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboLoaiTaiKhoan;
         private System.Windows.Forms.Label lblChonMonHoc;
         private System.Windows.Forms.Label lblHoTenGV;
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDSTaiKhoan;
         private System.Windows.Forms.Button btnSuaCauHoi;
         private System.Windows.Forms.Button btnSuaDeThi;
         private System.Windows.Forms.Button btnThemDeThi;
