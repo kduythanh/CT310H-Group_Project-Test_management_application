@@ -37,7 +37,7 @@
             this.cboChonMonHoc = new System.Windows.Forms.ComboBox();
             this.cboChonDeThi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtGiaoVien = new System.Windows.Forms.TextBox();
+            this.txtGVRaDe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtThoiGianLam = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -151,14 +151,14 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Chọn đề thi:";
             // 
-            // txtGiaoVien
+            // txtGVRaDe
             // 
-            this.txtGiaoVien.Enabled = false;
-            this.txtGiaoVien.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtGiaoVien.Location = new System.Drawing.Point(165, 143);
-            this.txtGiaoVien.Name = "txtGiaoVien";
-            this.txtGiaoVien.Size = new System.Drawing.Size(343, 29);
-            this.txtGiaoVien.TabIndex = 22;
+            this.txtGVRaDe.Enabled = false;
+            this.txtGVRaDe.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtGVRaDe.Location = new System.Drawing.Point(165, 143);
+            this.txtGVRaDe.Name = "txtGVRaDe";
+            this.txtGVRaDe.Size = new System.Drawing.Size(343, 29);
+            this.txtGVRaDe.TabIndex = 22;
             // 
             // label2
             // 
@@ -206,7 +206,7 @@
             this.grpVaoThi.Controls.Add(this.lblPhut);
             this.grpVaoThi.Controls.Add(this.txtThoiGianLam);
             this.grpVaoThi.Controls.Add(this.label3);
-            this.grpVaoThi.Controls.Add(this.txtGiaoVien);
+            this.grpVaoThi.Controls.Add(this.txtGVRaDe);
             this.grpVaoThi.Controls.Add(this.label2);
             this.grpVaoThi.Controls.Add(this.cboChonDeThi);
             this.grpVaoThi.Controls.Add(this.label1);
@@ -274,7 +274,7 @@
         private System.Windows.Forms.ComboBox cboChonMonHoc;
         private System.Windows.Forms.ComboBox cboChonDeThi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGiaoVien;
+        private System.Windows.Forms.TextBox txtGVRaDe;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtThoiGianLam;
         private System.Windows.Forms.Label label3;

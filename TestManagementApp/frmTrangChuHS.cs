@@ -15,6 +15,12 @@ namespace TestManagementApp
         public frmTrangChuHS()
         {
             InitializeComponent();
+            LoadHS();
+        }
+
+        void LoadHS()
+        {
+            txtHocSinh.Text = Session.HoTen + " (" + Session.TenTaiKhoan + ")";
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,12 @@ namespace TestManagementApp
         public frmTrangChuGV()
         {
             InitializeComponent();
+            LoadGV();
+        }
+
+        void LoadGV()
+        {
+            txtGiaoVien.Text = Session.HoTen + " (" + Session.TenTaiKhoan + ")";
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

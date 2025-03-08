@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|e:\\phat_trien_ud_net\\project\\ct310h-group_project-test_management_application\\testmanagementapp\\frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchuhs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56F6E85C-5CAD-4ED8-BF54-411A5EA6E94D}|TestManagementApp.csproj|solutionrelative:frmtrangchugv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,75 +42,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmTrangChuGV.cs",
-              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs",
-              "RelativeDocumentMoniker": "frmTrangChuGV.cs",
-              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs",
-              "RelativeToolTip": "frmTrangChuGV.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T01:01:52.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmTrangChuHS.cs",
-              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuHS.cs",
-              "RelativeDocumentMoniker": "frmTrangChuHS.cs",
-              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuHS.cs",
-              "RelativeToolTip": "frmTrangChuHS.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T01:01:41.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmTrangChuAdmin.cs",
-              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs",
-              "RelativeDocumentMoniker": "frmTrangChuAdmin.cs",
-              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs",
-              "RelativeToolTip": "frmTrangChuAdmin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T00:59:55.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "frmDangNhap.cs",
-              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs",
-              "RelativeToolTip": "frmDangNhap.cs",
-              "ViewState": "AgIAACMAAADA/f///78swEMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T00:56:07.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "frmDangNhap.cs [Design]",
               "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs",
               "RelativeDocumentMoniker": "frmDangNhap.cs",
               "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs [Design]",
               "RelativeToolTip": "frmDangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-06T00:56:03.348Z",
+              "WhenOpened": "2025-03-08T00:09:24.305Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmTrangChuAdmin.cs [Design]",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs",
+              "RelativeDocumentMoniker": "frmTrangChuAdmin.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs [Design]",
+              "RelativeToolTip": "frmTrangChuAdmin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T00:06:06.518Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmTrangChuGV.cs [Design]",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs",
+              "RelativeDocumentMoniker": "frmTrangChuGV.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs [Design]",
+              "RelativeToolTip": "frmTrangChuGV.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-08T00:03:19.978Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmTrangChuGV.cs",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs",
+              "RelativeDocumentMoniker": "frmTrangChuGV.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuGV.cs",
+              "RelativeToolTip": "frmTrangChuGV.cs",
+              "ViewState": "AgIAAAcAAACw/////38owBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T01:01:52.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmTrangChuHS.cs",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuHS.cs",
+              "RelativeDocumentMoniker": "frmTrangChuHS.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuHS.cs",
+              "RelativeToolTip": "frmTrangChuHS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T01:01:41.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmTrangChuAdmin.cs",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs",
+              "RelativeDocumentMoniker": "frmTrangChuAdmin.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuAdmin.cs",
+              "RelativeToolTip": "frmTrangChuAdmin.cs",
+              "ViewState": "AgIAABUAAADAMDMzM7MQwCoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:59:55.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmDangNhap.cs",
+              "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "frmDangNhap.cs",
+              "ToolTip": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmDangNhap.cs",
+              "RelativeToolTip": "frmDangNhap.cs",
+              "ViewState": "AgIAABcAAAAA2GVmZmbGvygAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T00:56:07.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "frmTrangChuHS.cs [Design]",
               "DocumentMoniker": "E:\\Phat_trien_UD_NET\\Project\\CT310H-Group_Project-Test_management_application\\TestManagementApp\\frmTrangChuHS.cs",
               "RelativeDocumentMoniker": "frmTrangChuHS.cs",
