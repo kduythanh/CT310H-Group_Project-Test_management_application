@@ -76,6 +76,10 @@ namespace TestManagementApp
             {
                 MessageBox.Show("Lỗi kết nối đến CSDL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally 
+            {
+                clsDatabase.CloseConnection();
+            }
         }
     }
 }

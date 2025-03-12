@@ -41,5 +41,12 @@ namespace TestManagementApp
                 loginForm.Show();
             }
         }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
+            frmDoiMatKhau.Show();
+        }
     }
 }

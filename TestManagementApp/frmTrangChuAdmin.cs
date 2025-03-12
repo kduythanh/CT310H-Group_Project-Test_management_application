@@ -45,6 +45,10 @@ namespace TestManagementApp
             {
                 MessageBox.Show("Lỗi khi tải danh sách tài khoản: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                clsDatabase.CloseConnection();
+            }
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -71,11 +75,6 @@ namespace TestManagementApp
         }
 
         private void btnThemDeThi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
         {
 
         }

@@ -243,12 +243,14 @@
             this.btnDoiMatKhau.TabIndex = 15;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // frmTrangChuHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 433);
+            this.ControlBox = false;
             this.Controls.Add(this.grpChucNangKhac);
             this.Controls.Add(this.grpVaoThi);
             this.Controls.Add(this.btnDangXuat);
