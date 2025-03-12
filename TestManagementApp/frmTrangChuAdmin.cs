@@ -69,5 +69,15 @@ namespace TestManagementApp
         {
             LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
         }
+
+        private void btnThemDeThi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

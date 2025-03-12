@@ -1,0 +1,25 @@
+# Ignore Visual Studio specific files and directories
+.vs/
+*.suo
+
+# Ignore file index and cache files
+TestManagementApp/.vs/
+TestManagementApp/**/FileContentIndex/
+TestManagementApp/**/FileContentIndex/*.vsidx
+
+# Ignore compiled binaries and debug files
+bin/
+obj/
+*.exe
+*.pdb
+*.cache
+
+# Ignore backup and layout files
+*.backup.json
+DocumentLayout.json
+
+# Ignore temporary and generated files
+*.txt
+*.user
+*.log
+*.temp
