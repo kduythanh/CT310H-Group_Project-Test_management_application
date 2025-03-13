@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace TestManagementApp
 {
@@ -74,7 +76,19 @@ namespace TestManagementApp
             LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
         }
 
-        private void btnThemDeThi_Click(object sender, EventArgs e)
+        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            frmThemSuaTaiKhoan frm = new frmThemSuaTaiKhoan();
+            frm.AccountAdded += (s, ev) => LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
+            frm.Show();
+        }
+
+        private void btnSuaTaiKhoan_Click(object sender, EventArgs e)
         {
 
         }
