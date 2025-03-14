@@ -37,9 +37,9 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDSTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.btnSuaCauHoi = new System.Windows.Forms.Button();
-            this.btnSuaDeThi = new System.Windows.Forms.Button();
-            this.btnThemDeThi = new System.Windows.Forms.Button();
+            this.btnXoaTaiKhoan = new System.Windows.Forms.Button();
+            this.btnSuaTaiKhoan = new System.Windows.Forms.Button();
+            this.btnThemTaiKhoan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +107,10 @@
             // 
             // dgvDSTaiKhoan
             // 
+            this.dgvDSTaiKhoan.AllowUserToAddRows = false;
+            this.dgvDSTaiKhoan.AllowUserToDeleteRows = false;
+            this.dgvDSTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDSTaiKhoan.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,6 +129,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDSTaiKhoan.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDSTaiKhoan.Location = new System.Drawing.Point(40, 164);
+            this.dgvDSTaiKhoan.MultiSelect = false;
             this.dgvDSTaiKhoan.Name = "dgvDSTaiKhoan";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -137,42 +142,45 @@
             this.dgvDSTaiKhoan.RowHeadersWidth = 51;
             this.dgvDSTaiKhoan.Size = new System.Drawing.Size(514, 243);
             this.dgvDSTaiKhoan.TabIndex = 24;
+            this.dgvDSTaiKhoan.Click += new System.EventHandler(this.dgvDSTaiKhoan_SelectionChanged);
             // 
-            // btnSuaCauHoi
+            // btnXoaTaiKhoan
             // 
-            this.btnSuaCauHoi.Enabled = false;
-            this.btnSuaCauHoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSuaCauHoi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSuaCauHoi.Location = new System.Drawing.Point(581, 361);
-            this.btnSuaCauHoi.Name = "btnSuaCauHoi";
-            this.btnSuaCauHoi.Size = new System.Drawing.Size(185, 29);
-            this.btnSuaCauHoi.TabIndex = 27;
-            this.btnSuaCauHoi.Text = "Xóa tài khoản";
-            this.btnSuaCauHoi.UseVisualStyleBackColor = true;
+            this.btnXoaTaiKhoan.Enabled = false;
+            this.btnXoaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnXoaTaiKhoan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnXoaTaiKhoan.Location = new System.Drawing.Point(581, 361);
+            this.btnXoaTaiKhoan.Name = "btnXoaTaiKhoan";
+            this.btnXoaTaiKhoan.Size = new System.Drawing.Size(185, 29);
+            this.btnXoaTaiKhoan.TabIndex = 27;
+            this.btnXoaTaiKhoan.Text = "Xóa tài khoản";
+            this.btnXoaTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnXoaTaiKhoan.Click += new System.EventHandler(this.btnXoaTaiKhoan_Click);
             // 
-            // btnSuaDeThi
+            // btnSuaTaiKhoan
             // 
-            this.btnSuaDeThi.Enabled = false;
-            this.btnSuaDeThi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSuaDeThi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSuaDeThi.Location = new System.Drawing.Point(581, 271);
-            this.btnSuaDeThi.Name = "btnSuaDeThi";
-            this.btnSuaDeThi.Size = new System.Drawing.Size(185, 29);
-            this.btnSuaDeThi.TabIndex = 26;
-            this.btnSuaDeThi.Text = "Cập nhật thông tin";
-            this.btnSuaDeThi.UseVisualStyleBackColor = true;
+            this.btnSuaTaiKhoan.Enabled = false;
+            this.btnSuaTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSuaTaiKhoan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSuaTaiKhoan.Location = new System.Drawing.Point(581, 271);
+            this.btnSuaTaiKhoan.Name = "btnSuaTaiKhoan";
+            this.btnSuaTaiKhoan.Size = new System.Drawing.Size(185, 29);
+            this.btnSuaTaiKhoan.TabIndex = 26;
+            this.btnSuaTaiKhoan.Text = "Cập nhật thông tin";
+            this.btnSuaTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnSuaTaiKhoan.Click += new System.EventHandler(this.btnSuaTaiKhoan_Click);
             // 
-            // btnThemDeThi
+            // btnThemTaiKhoan
             // 
-            this.btnThemDeThi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnThemDeThi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnThemDeThi.Location = new System.Drawing.Point(581, 181);
-            this.btnThemDeThi.Name = "btnThemDeThi";
-            this.btnThemDeThi.Size = new System.Drawing.Size(185, 29);
-            this.btnThemDeThi.TabIndex = 25;
-            this.btnThemDeThi.Text = "Thêm tài khoản mới";
-            this.btnThemDeThi.UseVisualStyleBackColor = true;
-            this.btnThemDeThi.Click += new System.EventHandler(this.btnThemDeThi_Click);
+            this.btnThemTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThemTaiKhoan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnThemTaiKhoan.Location = new System.Drawing.Point(581, 181);
+            this.btnThemTaiKhoan.Name = "btnThemTaiKhoan";
+            this.btnThemTaiKhoan.Size = new System.Drawing.Size(185, 29);
+            this.btnThemTaiKhoan.TabIndex = 25;
+            this.btnThemTaiKhoan.Text = "Thêm tài khoản mới";
+            this.btnThemTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnThemTaiKhoan.Click += new System.EventHandler(this.btnThemTaiKhoan_Click);
             // 
             // frmTrangChuAdmin
             // 
@@ -180,9 +188,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSuaCauHoi);
-            this.Controls.Add(this.btnSuaDeThi);
-            this.Controls.Add(this.btnThemDeThi);
+            this.Controls.Add(this.btnXoaTaiKhoan);
+            this.Controls.Add(this.btnSuaTaiKhoan);
+            this.Controls.Add(this.btnThemTaiKhoan);
             this.Controls.Add(this.dgvDSTaiKhoan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangXuat);
@@ -205,8 +213,8 @@
         private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDSTaiKhoan;
-        private System.Windows.Forms.Button btnSuaCauHoi;
-        private System.Windows.Forms.Button btnSuaDeThi;
-        private System.Windows.Forms.Button btnThemDeThi;
+        private System.Windows.Forms.Button btnXoaTaiKhoan;
+        private System.Windows.Forms.Button btnSuaTaiKhoan;
+        private System.Windows.Forms.Button btnThemTaiKhoan;
     }
 }
