@@ -23,6 +23,12 @@ namespace TestManagementApp
             btnSuaTaiKhoan.Enabled = false;
             btnXoaTaiKhoan.Enabled = false;
         }
+
+        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
         void LoadTaiKhoan(string role)
         {
             try
@@ -74,10 +80,13 @@ namespace TestManagementApp
             LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
         }
 
-        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
+        private void dgvDSTaiKhoan_SelectionChanged(object sender, EventArgs e)
         {
-
+            bool hasSelection = dgvDSTaiKhoan.SelectedRows.Count > 0;
+            btnSuaTaiKhoan.Enabled = hasSelection;
+            btnXoaTaiKhoan.Enabled = hasSelection;
         }
+
 
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
@@ -95,7 +104,12 @@ namespace TestManagementApp
                 int role = cboLoaiTaiKhoan.SelectedIndex == 0 ? 1 : 0; 
 
                 frmThemSuaTaiKhoan frm = new frmThemSuaTaiKhoan(accountName, fullName, role);
-                frm.AccountAdded += (s, ev) => LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
+                frm.AccountAdded += (s, ev) =>
+                {
+                    LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
+                    btnSuaTaiKhoan.Enabled = false;
+                    btnXoaTaiKhoan.Enabled = false;
+                };
                 frm.ShowDialog();
             }
             else
@@ -104,35 +118,19 @@ namespace TestManagementApp
             }
         }
 
-        private void dgvDSTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) 
-            {
-                btnSuaTaiKhoan.Enabled = true;
-            }
-        }
 
-        private void dgvDSTaiKhoan_SelectionChanged(object sender, EventArgs e)
-        {
-            // Enable the delete button only if a row is selected
-            btnXoaTaiKhoan.Enabled = dgvDSTaiKhoan.SelectedRows.Count > 0;
-        }
 
         private void btnXoaTaiKhoan_Click(object sender, EventArgs e)
         {
-            // Check if a row is selected
             if (dgvDSTaiKhoan.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một tài khoản để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Get the selected row's MA_TK value
             string accountName = dgvDSTaiKhoan.SelectedRows[0].Cells["MA_TK"].Value.ToString();
 
-            // Confirm deletion
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản với MA_TK = {accountName} không?",
-                                                  "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản với MA_TK = {accountName} không?","Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -146,7 +144,9 @@ namespace TestManagementApp
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString()); // Refresh account list
+                        LoadTaiKhoan(cboLoaiTaiKhoan.SelectedItem.ToString());
+                        btnSuaTaiKhoan.Enabled = false;
+                        btnXoaTaiKhoan.Enabled = false;
                     }
                     else
                     {

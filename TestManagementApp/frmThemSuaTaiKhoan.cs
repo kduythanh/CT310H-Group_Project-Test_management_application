@@ -21,14 +21,7 @@ namespace TestManagementApp
             InitializeComponent();
             LoadRoleData();
             cboRole.SelectedIndex = 0;
-        }
-
-        private void frmThemSuaTaiKhoan_Load(object sender, EventArgs e)
-        {
-            if (existingAccountName != null)
-            {
-                txtAccountName.Enabled = false;
-            }
+            lblTitle.Text = "Thêm Tài Khoản";
         }
 
         public frmThemSuaTaiKhoan(string accountName, string fullName, int role) : this()
@@ -37,7 +30,16 @@ namespace TestManagementApp
             txtAccountName.Text = accountName;
             txtFullName.Text = fullName;
             cboRole.SelectedValue = role;
-            txtAccountName.Enabled = false; 
+            txtAccountName.Enabled = false;
+            lblTitle.Text = "Sửa Tài Khoản";
+        }
+
+        private void frmThemSuaTaiKhoan_Load(object sender, EventArgs e)
+        {
+            if (existingAccountName != null)
+            {
+                txtAccountName.Enabled = false;
+            }
         }
 
         private void LoadRoleData()
@@ -112,7 +114,7 @@ namespace TestManagementApp
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show(existingAccountName == null ? "Thêm tài khoản thành công!" : "Cập nhật tài khoản thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AccountAdded?.Invoke(this, EventArgs.Empty); 
+                    AccountAdded?.Invoke(this, EventArgs.Empty);
                     this.Close();
                 }
                 else

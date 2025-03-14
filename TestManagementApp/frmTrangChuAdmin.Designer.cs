@@ -143,8 +143,7 @@
             this.dgvDSTaiKhoan.RowHeadersWidth = 51;
             this.dgvDSTaiKhoan.Size = new System.Drawing.Size(685, 299);
             this.dgvDSTaiKhoan.TabIndex = 24;
-            this.dgvDSTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSTaiKhoan_CellContentClick);
-            this.dgvDSTaiKhoan.DoubleClick += new System.EventHandler(this.dgvDSTaiKhoan_SelectionChanged);
+            this.dgvDSTaiKhoan.Click += new System.EventHandler(this.dgvDSTaiKhoan_SelectionChanged);
             // 
             // btnXoaTaiKhoan
             // 
