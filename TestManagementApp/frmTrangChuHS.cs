@@ -47,5 +47,23 @@ namespace TestManagementApp
             frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
             frmDoiMatKhau.Show();
         }
+
+        private void btnVaoThi_Click(object sender, EventArgs e)
+        {
+            frmNhapMatKhau formNhap = new frmNhapMatKhau();
+
+            if (formNhap.ShowDialog() == DialogResult.OK) // Nếu nhấn Xác nhận
+            {
+                if (formNhap.MatKhauNhap == "matkhau123") // Kiểm tra mật khẩu
+                {
+                    MessageBox.Show("Mật khẩu đúng! Bắt đầu vào thi.", "Thông báo");
+                    // Chuyển đến màn hình làm bài thi
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu sai!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
