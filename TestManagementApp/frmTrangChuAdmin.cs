@@ -24,11 +24,6 @@ namespace TestManagementApp
             btnXoaTaiKhoan.Enabled = false;
         }
 
-        private void frmTrangChuAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         void LoadTaiKhoan(string role)
         {
             try

@@ -177,7 +177,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "frmThemSuaTaiKhoan";
-            this.Text = "frmThemSuaTaiKhoan";
+            this.Text = "Cập Nhật Tài Khoản";
             this.Load += new System.EventHandler(this.frmThemSuaTaiKhoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

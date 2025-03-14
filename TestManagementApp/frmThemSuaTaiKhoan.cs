@@ -14,24 +14,36 @@ namespace TestManagementApp
     public partial class frmThemSuaTaiKhoan: Form
     {
         public event EventHandler AccountAdded;
-        private string existingAccountName = null; 
+        private string existingAccountName = null;
+        private string originalAccountName;
+        private string originalFullName;
+        private int originalRole;
 
         public frmThemSuaTaiKhoan()
         {
             InitializeComponent();
             LoadRoleData();
             cboRole.SelectedIndex = 0;
-            lblTitle.Text = "Thêm Tài Khoản";
+            lblTitle.Text = "Thêm Tài Khoản"; // Default title for add mode
         }
 
         public frmThemSuaTaiKhoan(string accountName, string fullName, int role) : this()
         {
             existingAccountName = accountName;
+
+            // Store original values for restoring on cancel
+            originalAccountName = accountName;
+            originalFullName = fullName;
+            originalRole = role;
+
+            // Populate fields with existing data (Edit Mode)
             txtAccountName.Text = accountName;
             txtFullName.Text = fullName;
             cboRole.SelectedValue = role;
+
+            
             txtAccountName.Enabled = false;
-            lblTitle.Text = "Sửa Tài Khoản";
+            lblTitle.Text = "Sửa Tài Khoản"; // Edit Mode: Change title
         }
 
         private void frmThemSuaTaiKhoan_Load(object sender, EventArgs e)
@@ -56,12 +68,22 @@ namespace TestManagementApp
             cboRole.ValueMember = "RoleValue";  
         }
 
-        private void btnCancel_Click(object sendẻ, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtAccountName.Clear();
-            txtFullName.Clear();
-            txtPassword.Clear();
-            cboRole.SelectedIndex = 0;
+            if (existingAccountName == null) // Add mode
+            {
+                txtAccountName.Clear();
+                txtFullName.Clear();
+                txtPassword.Clear();
+                cboRole.SelectedIndex = 0;
+            }
+            else // Edit mode
+            {
+                txtAccountName.Text = originalAccountName;
+                txtFullName.Text = originalFullName;
+                txtPassword.Clear();
+                cboRole.SelectedIndex = originalRole;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -87,7 +109,7 @@ namespace TestManagementApp
                 clsDatabase.OpenConnection();
                 SqlCommand cmd;
 
-                if (existingAccountName == null) 
+                if (existingAccountName == null) // Add Mode: Insert new account
                 {
                     SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM TAI_KHOAN WHERE MA_TK = @MA_TK", clsDatabase.con);
                     checkCmd.Parameters.AddWithValue("@MA_TK", accountName);
@@ -100,7 +122,7 @@ namespace TestManagementApp
 
                     cmd = new SqlCommand("INSERT INTO TAI_KHOAN (MA_TK, HO_TEN, MAT_KHAU, ROLE) VALUES (@MA_TK, @HO_TEN, @MAT_KHAU, @ROLE)", clsDatabase.con);
                 }
-                else
+                else // Edit Mode: Update existing account
                 {
                     cmd = new SqlCommand("UPDATE TAI_KHOAN SET HO_TEN = @HO_TEN, MAT_KHAU = @MAT_KHAU, ROLE = @ROLE WHERE MA_TK = @MA_TK", clsDatabase.con);
                 }
@@ -115,7 +137,7 @@ namespace TestManagementApp
                 {
                     MessageBox.Show(existingAccountName == null ? "Thêm tài khoản thành công!" : "Cập nhật tài khoản thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AccountAdded?.Invoke(this, EventArgs.Empty);
-                    this.Close();
+                    this.Close(); // Close the form after confirming
                 }
                 else
                 {
