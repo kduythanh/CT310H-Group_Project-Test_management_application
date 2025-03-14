@@ -100,3 +100,31 @@ INSERT INTO TAI_KHOAN VALUES (N'HS0001', N'Nguyễn Tuấn Anh', N'123456', 0);
 -- SELECT dữ liệu
 SELECT * FROM TAI_KHOAN;
 SELECT * FROM MON_HOC;
+
+SELECT * FROM DE_THI;
+SELECT * FROM CAU_HOI;
+SELECT * FROM BAI_THI;
+SELECT * FROM CHI_TIET_BAI_THI;
+
+-- TEST DATA
+-- Insert a test into DE_THI (History Exam)
+INSERT INTO DE_THI VALUES (N'LSU001', N'Kiểm tra Lịch Sử 15 phút', N'LSU', N'GV0001', 15, 'a', 1);
+
+-- Insert questions into CAU_HOI
+INSERT INTO CAU_HOI VALUES 
+(N'LSUQ001', N'LSU001', N'Ai là người phát hiện ra châu Mỹ?', N'Columbus', N'Magellan', N'Vasco da Gama', N'James Cook', N'A'),
+(N'LSUQ002', N'LSU001', N'Năm 1945, sự kiện lịch sử quan trọng nào diễn ra ở Việt Nam?', N'Chiến dịch Điện Biên Phủ', N'Cách mạng tháng Tám', N'Tuyên ngôn độc lập', N'Hiệp định Genève', N'C'),
+(N'LSUQ003', N'LSU001', N'Nước nào là đồng minh của Việt Nam trong kháng chiến chống Mỹ?', N'Liên Xô', N'Anh', N'Pháp', N'Nhật Bản', N'A'),
+(N'LSUQ004', N'LSU001', N'Nhà Nguyễn thành lập vào năm nào?', N'1802', N'1858', N'1945', N'1975', N'A'),
+(N'LSUQ005', N'LSU001', N'Chiến dịch nào kết thúc cuộc kháng chiến chống thực dân Pháp?', N'Chiến dịch Hồ Chí Minh', N'Chiến dịch Tây Nguyên', N'Chiến dịch Biên giới', N'Chiến dịch Điện Biên Phủ', N'D');
+
+-- Insert an exam attempt into BAI_THI
+INSERT INTO BAI_THI VALUES (N'BT001', N'LSU001', N'a', GETDATE(), 8.0);
+
+-- Insert student's answers into CHI_TIET_BAI_THI
+INSERT INTO CHI_TIET_BAI_THI VALUES 
+(N'BT001', N'LSUQ001', N'A', N'Đúng'),
+(N'BT001', N'LSUQ002', N'C', N'Đúng'),
+(N'BT001', N'LSUQ003', N'B', N'Sai'),
+(N'BT001', N'LSUQ004', N'A', N'Đúng'),
+(N'BT001', N'LSUQ005', N'D', N'Đúng');
