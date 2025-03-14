@@ -14,6 +14,7 @@ namespace TestManagementApp
     public partial class frmThemSuaTaiKhoan: Form
     {
         public event EventHandler AccountAdded;
+        private string existingAccountName = null; 
 
         public frmThemSuaTaiKhoan()
         {
@@ -24,7 +25,19 @@ namespace TestManagementApp
 
         private void frmThemSuaTaiKhoan_Load(object sender, EventArgs e)
         {
+            if (existingAccountName != null)
+            {
+                txtAccountName.Enabled = false;
+            }
+        }
 
+        public frmThemSuaTaiKhoan(string accountName, string fullName, int role) : this()
+        {
+            existingAccountName = accountName;
+            txtAccountName.Text = accountName;
+            txtFullName.Text = fullName;
+            cboRole.SelectedValue = role;
+            txtAccountName.Enabled = false; 
         }
 
         private void LoadRoleData()
@@ -56,11 +69,7 @@ namespace TestManagementApp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrWhiteSpace(txtAccountName.Text) ||
-                string.IsNullOrWhiteSpace(txtFullName.Text) ||
-                string.IsNullOrWhiteSpace(txtPassword.Text) ||
-                cboRole.SelectedIndex == -1)
+            if (string.IsNullOrWhiteSpace(txtFullName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text) || cboRole.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -69,23 +78,31 @@ namespace TestManagementApp
             string accountName = txtAccountName.Text.Trim();
             string fullName = txtFullName.Text.Trim();
             string password = txtPassword.Text.Trim();
-            int role = Convert.ToInt32(cboRole.SelectedValue); 
+            int role = Convert.ToInt32(cboRole.SelectedValue);
 
             try
             {
-                // Kiểm tra tài khoản đã tồn tại chưa 
                 clsDatabase.OpenConnection();
-                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM TAI_KHOAN WHERE MA_TK = @MA_TK", clsDatabase.con);
-                checkCmd.Parameters.AddWithValue("@MA_TK", accountName);
-                int exists = (int)checkCmd.ExecuteScalar();
+                SqlCommand cmd;
 
-                if (exists > 0)
+                if (existingAccountName == null) 
                 {
-                    MessageBox.Show("Tài khoản đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM TAI_KHOAN WHERE MA_TK = @MA_TK", clsDatabase.con);
+                    checkCmd.Parameters.AddWithValue("@MA_TK", accountName);
+                    int exists = (int)checkCmd.ExecuteScalar();
+                    if (exists > 0)
+                    {
+                        MessageBox.Show("Tài khoản đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    cmd = new SqlCommand("INSERT INTO TAI_KHOAN (MA_TK, HO_TEN, MAT_KHAU, ROLE) VALUES (@MA_TK, @HO_TEN, @MAT_KHAU, @ROLE)", clsDatabase.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("UPDATE TAI_KHOAN SET HO_TEN = @HO_TEN, MAT_KHAU = @MAT_KHAU, ROLE = @ROLE WHERE MA_TK = @MA_TK", clsDatabase.con);
                 }
 
-                SqlCommand cmd = new SqlCommand("insert into tai_khoan (MA_TK, HO_TEN, MAT_KHAU, ROLE) values (@MA_TK, @HO_TEN, @MAT_KHAU, @ROLE)", clsDatabase.con);
                 cmd.Parameters.AddWithValue("@MA_TK", accountName);
                 cmd.Parameters.AddWithValue("@HO_TEN", fullName);
                 cmd.Parameters.AddWithValue("@MAT_KHAU", password);
@@ -94,23 +111,23 @@ namespace TestManagementApp
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Thêm tài khoản thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    AccountAdded?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(existingAccountName == null ? "Thêm tài khoản thành công!" : "Cập nhật tài khoản thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AccountAdded?.Invoke(this, EventArgs.Empty); 
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Thêm tài khoản thất bại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi lưu tài khoản!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 clsDatabase.CloseConnection();
             }
         }
-
     }
 }
