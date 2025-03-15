@@ -18,11 +18,17 @@ namespace TestManagementApp
             InitializeComponent();
             LoadHS();
             LoadMonHoc();
+            btnVaoThi.Enabled = false;
         }
 
         void LoadHS()
         {
             txtHocSinh.Text = Session.HoTen + " (" + Session.TenTaiKhoan + ")";
+        }
+
+        private void UpdateVaoThiButtonState()
+        {
+            btnVaoThi.Enabled = (cboChonMonHoc.SelectedIndex != -1 && cboChonDeThi.SelectedIndex != -1);
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -109,6 +115,7 @@ namespace TestManagementApp
 
             string maMon = cboChonMonHoc.SelectedValue.ToString();
             LoadDeThi(maMon);
+            UpdateVaoThiButtonState();
         }
 
         private void cboChonDeThi_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,6 +125,7 @@ namespace TestManagementApp
 
             string maDeThi = cboChonDeThi.SelectedValue.ToString();
             LoadGiaoVienVaThoiGian(maDeThi);
+            UpdateVaoThiButtonState();
         }
 
 
@@ -161,6 +169,20 @@ namespace TestManagementApp
             frmXemLichSuLamBai lichSuForm = new frmXemLichSuLamBai(maDeThi);
             lichSuForm.Show();
         }
+
+        private void btnVaoThi_Click(object sender, EventArgs e)
+        {
+            if (cboChonDeThi.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn một đề thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string maDeThi = cboChonDeThi.SelectedValue.ToString();
+            frmXacNhanThi confirmForm = new frmXacNhanThi(maDeThi);
+            confirmForm.Show();
+        }
+
     }
 }
 

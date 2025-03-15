@@ -63,6 +63,7 @@
             this.btnVaoThi.TabIndex = 15;
             this.btnVaoThi.Text = "Vào thi";
             this.btnVaoThi.UseVisualStyleBackColor = false;
+            this.btnVaoThi.Click += new System.EventHandler(this.btnVaoThi_Click);
             // 
             // btnXemLichSu
             // 
