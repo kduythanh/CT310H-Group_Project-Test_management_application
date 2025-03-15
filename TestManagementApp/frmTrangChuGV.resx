@@ -387,27 +387,6 @@
   <data name="&gt;&gt;btnXoaDeThi.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnXemKetQua.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnXemKetQua.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
-  </data>
-  <data name="btnXemKetQua.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnXemKetQua.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 324</value>
-  </data>
-  <data name="btnXemKetQua.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 29</value>
-  </data>
-  <data name="btnXemKetQua.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnXemKetQua.Text" xml:space="preserve">
-    <value>Xem kết quả làm bài</value>
-  </data>
   <data name="&gt;&gt;btnXemKetQua.Name" xml:space="preserve">
     <value>btnXemKetQua</value>
   </data>
@@ -447,23 +426,38 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnDoiMatKhau.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnXemKetQua.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnXemKetQua.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
-  <data name="btnDoiMatKhau.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnXemKetQua.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnDoiMatKhau.Location" type="System.Drawing.Point, System.Drawing">
-    <value>68, 28</value>
+  <data name="btnXemKetQua.Location" type="System.Drawing.Point, System.Drawing">
+    <value>494, 324</value>
   </data>
-  <data name="btnDoiMatKhau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 29</value>
+  <data name="btnXemKetQua.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 29</value>
   </data>
-  <data name="btnDoiMatKhau.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="btnXemKetQua.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="btnDoiMatKhau.Text" xml:space="preserve">
-    <value>Đổi mật khẩu</value>
+  <data name="btnXemKetQua.Text" xml:space="preserve">
+    <value>Xem kết quả làm bài</value>
+  </data>
+  <data name="&gt;&gt;btnXemKetQua.Name" xml:space="preserve">
+    <value>btnXemKetQua</value>
+  </data>
+  <data name="&gt;&gt;btnXemKetQua.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnXemKetQua.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btnXemKetQua.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnDoiMatKhau.Name" xml:space="preserve">
     <value>btnDoiMatKhau</value>
@@ -502,6 +496,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;grpChucNangKhac.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDoiMatKhau.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="btnDoiMatKhau.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDoiMatKhau.Location" type="System.Drawing.Point, System.Drawing">
+    <value>68, 28</value>
+  </data>
+  <data name="btnDoiMatKhau.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 29</value>
+  </data>
+  <data name="btnDoiMatKhau.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnDoiMatKhau.Text" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+  </data>
+  <data name="&gt;&gt;btnDoiMatKhau.Name" xml:space="preserve">
+    <value>btnDoiMatKhau</value>
+  </data>
+  <data name="&gt;&gt;btnDoiMatKhau.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDoiMatKhau.Parent" xml:space="preserve">
+    <value>grpChucNangKhac</value>
+  </data>
+  <data name="&gt;&gt;btnDoiMatKhau.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
