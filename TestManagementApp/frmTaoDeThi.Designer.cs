@@ -41,6 +41,7 @@
             this.cboMonHoc = new System.Windows.Forms.ComboBox();
             this.btnTaoDe = new System.Windows.Forms.Button();
             this.btnThemCauHoi = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTaoDeThi
@@ -179,12 +180,26 @@
             this.btnThemCauHoi.UseVisualStyleBackColor = false;
             this.btnThemCauHoi.Click += new System.EventHandler(this.btnThemCauHoi_Click);
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Transparent;
+            this.btnThoat.Location = new System.Drawing.Point(238, 604);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(151, 60);
+            this.btnThoat.TabIndex = 14;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmTaoDeThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 702);
             this.ControlBox = false;
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThemCauHoi);
             this.Controls.Add(this.btnTaoDe);
             this.Controls.Add(this.cboMonHoc);
@@ -222,5 +237,6 @@
         private System.Windows.Forms.ComboBox cboMonHoc;
         private System.Windows.Forms.Button btnTaoDe;
         private System.Windows.Forms.Button btnThemCauHoi;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

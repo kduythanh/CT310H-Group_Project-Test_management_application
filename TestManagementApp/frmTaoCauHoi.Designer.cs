@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoCauHoi));
             this.lblDSCauHoi = new System.Windows.Forms.Label();
             this.lblDanhSachCauHoi = new System.Windows.Forms.Label();
             this.dgvDanhSachCauHoi = new System.Windows.Forms.DataGridView();
             this.colCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaCauHoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDapAnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDapAnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDapAnC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,13 +54,14 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnHoanThanh = new System.Windows.Forms.Button();
             this.lblKQ = new System.Windows.Forms.Label();
-            this.txtKQ = new System.Windows.Forms.TextBox();
             this.grbNoiDungDe = new System.Windows.Forms.GroupBox();
-            this.btnChonAnh = new System.Windows.Forms.Button();
-            this.picNoiDung = new System.Windows.Forms.PictureBox();
             this.rdoImage = new System.Windows.Forms.RadioButton();
             this.rdoText = new System.Windows.Forms.RadioButton();
             this.rtbNoiDung = new System.Windows.Forms.RichTextBox();
+            this.cboKQ = new System.Windows.Forms.ComboBox();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnChonAnh = new System.Windows.Forms.Button();
+            this.picNoiDung = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachCauHoi)).BeginInit();
             this.grbNoiDungDe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNoiDung)).BeginInit();
@@ -93,6 +96,7 @@
             this.dgvDanhSachCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachCauHoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCauHoi,
+            this.colMaCauHoi,
             this.colDapAnA,
             this.colDapAnB,
             this.colDapAnC,
@@ -105,16 +109,30 @@
             this.dgvDanhSachCauHoi.RowTemplate.Height = 24;
             this.dgvDanhSachCauHoi.Size = new System.Drawing.Size(1049, 718);
             this.dgvDanhSachCauHoi.TabIndex = 2;
+            this.dgvDanhSachCauHoi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachCauHoi_CellContentClick);
+            this.dgvDanhSachCauHoi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachCauHoi_CellContentClick);
             // 
             // colCauHoi
             // 
+            this.colCauHoi.DataPropertyName = "NOI_DUNG";
             this.colCauHoi.HeaderText = "Câu Hỏi";
             this.colCauHoi.MinimumWidth = 6;
             this.colCauHoi.Name = "colCauHoi";
             this.colCauHoi.Width = 125;
             // 
+            // colMaCauHoi
+            // 
+            this.colMaCauHoi.DataPropertyName = "MA_CAU_HOI";
+            this.colMaCauHoi.HeaderText = "Mã Câu Hỏi";
+            this.colMaCauHoi.MinimumWidth = 6;
+            this.colMaCauHoi.Name = "colMaCauHoi";
+            this.colMaCauHoi.ReadOnly = true;
+            this.colMaCauHoi.Visible = false;
+            this.colMaCauHoi.Width = 125;
+            // 
             // colDapAnA
             // 
+            this.colDapAnA.DataPropertyName = "PHUONG_AN_A";
             this.colDapAnA.HeaderText = "Đáp Án A";
             this.colDapAnA.MinimumWidth = 6;
             this.colDapAnA.Name = "colDapAnA";
@@ -122,6 +140,7 @@
             // 
             // colDapAnB
             // 
+            this.colDapAnB.DataPropertyName = "PHUONG_AN_B";
             this.colDapAnB.HeaderText = "Đáp Án B";
             this.colDapAnB.MinimumWidth = 6;
             this.colDapAnB.Name = "colDapAnB";
@@ -129,6 +148,7 @@
             // 
             // colDapAnC
             // 
+            this.colDapAnC.DataPropertyName = "PHUONG_AN_C";
             this.colDapAnC.HeaderText = "Đáp Án C";
             this.colDapAnC.MinimumWidth = 6;
             this.colDapAnC.Name = "colDapAnC";
@@ -136,6 +156,7 @@
             // 
             // colDapAnD
             // 
+            this.colDapAnD.DataPropertyName = "PHUONG_AN_D";
             this.colDapAnD.HeaderText = "Đáp Án D";
             this.colDapAnD.MinimumWidth = 6;
             this.colDapAnD.Name = "colDapAnD";
@@ -143,6 +164,7 @@
             // 
             // colKQ
             // 
+            this.colKQ.DataPropertyName = "DAP_AN";
             this.colKQ.HeaderText = "Kết Quả";
             this.colKQ.MinimumWidth = 6;
             this.colKQ.Name = "colKQ";
@@ -167,6 +189,7 @@
             this.cboTenDeThi.Name = "cboTenDeThi";
             this.cboTenDeThi.Size = new System.Drawing.Size(329, 31);
             this.cboTenDeThi.TabIndex = 6;
+            this.cboTenDeThi.SelectedIndexChanged += new System.EventHandler(this.cboTenDeThi_SelectedIndexChanged);
             // 
             // lblDapAnA
             // 
@@ -249,46 +272,49 @@
             this.btnThem.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnThem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Transparent;
-            this.btnThem.Location = new System.Drawing.Point(1619, 422);
+            this.btnThem.Location = new System.Drawing.Point(1619, 398);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(109, 58);
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.Goldenrod;
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSua.Location = new System.Drawing.Point(1619, 521);
+            this.btnSua.Location = new System.Drawing.Point(1619, 497);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(109, 58);
             this.btnSua.TabIndex = 18;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Red;
             this.btnXoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Transparent;
-            this.btnXoa.Location = new System.Drawing.Point(1619, 619);
+            this.btnXoa.Location = new System.Drawing.Point(1619, 595);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(109, 58);
             this.btnXoa.TabIndex = 19;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHoanThanh
             // 
             this.btnHoanThanh.BackColor = System.Drawing.Color.LimeGreen;
             this.btnHoanThanh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoanThanh.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHoanThanh.Location = new System.Drawing.Point(1619, 727);
+            this.btnHoanThanh.Location = new System.Drawing.Point(1619, 703);
             this.btnHoanThanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.btnHoanThanh.Size = new System.Drawing.Size(109, 58);
@@ -306,15 +332,6 @@
             this.lblKQ.TabIndex = 21;
             this.lblKQ.Text = "Kết Quả";
             // 
-            // txtKQ
-            // 
-            this.txtKQ.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKQ.Location = new System.Drawing.Point(1239, 786);
-            this.txtKQ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtKQ.Name = "txtKQ";
-            this.txtKQ.Size = new System.Drawing.Size(349, 30);
-            this.txtKQ.TabIndex = 22;
-            // 
             // grbNoiDungDe
             // 
             this.grbNoiDungDe.Controls.Add(this.btnChonAnh);
@@ -324,39 +341,19 @@
             this.grbNoiDungDe.Controls.Add(this.rtbNoiDung);
             this.grbNoiDungDe.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbNoiDungDe.Location = new System.Drawing.Point(1131, 153);
-            this.grbNoiDungDe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbNoiDungDe.Margin = new System.Windows.Forms.Padding(4);
             this.grbNoiDungDe.Name = "grbNoiDungDe";
-            this.grbNoiDungDe.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbNoiDungDe.Padding = new System.Windows.Forms.Padding(4);
             this.grbNoiDungDe.Size = new System.Drawing.Size(597, 197);
             this.grbNoiDungDe.TabIndex = 23;
             this.grbNoiDungDe.TabStop = false;
             this.grbNoiDungDe.Text = "Nội Dung Đề Thi";
             // 
-            // btnChonAnh
-            // 
-            this.btnChonAnh.Image = global::TestManagementApp.Properties.Resources.iconImage;
-            this.btnChonAnh.Location = new System.Drawing.Point(529, 143);
-            this.btnChonAnh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnChonAnh.Name = "btnChonAnh";
-            this.btnChonAnh.Size = new System.Drawing.Size(45, 34);
-            this.btnChonAnh.TabIndex = 4;
-            this.btnChonAnh.UseVisualStyleBackColor = true;
-            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
-            // 
-            // picNoiDung
-            // 
-            this.picNoiDung.Location = new System.Drawing.Point(33, 69);
-            this.picNoiDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.picNoiDung.Name = "picNoiDung";
-            this.picNoiDung.Size = new System.Drawing.Size(488, 108);
-            this.picNoiDung.TabIndex = 3;
-            this.picNoiDung.TabStop = false;
-            // 
             // rdoImage
             // 
             this.rdoImage.AutoSize = true;
             this.rdoImage.Location = new System.Drawing.Point(221, 37);
-            this.rdoImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoImage.Margin = new System.Windows.Forms.Padding(4);
             this.rdoImage.Name = "rdoImage";
             this.rdoImage.Size = new System.Drawing.Size(107, 23);
             this.rdoImage.TabIndex = 1;
@@ -369,7 +366,7 @@
             // 
             this.rdoText.AutoSize = true;
             this.rdoText.Location = new System.Drawing.Point(33, 37);
-            this.rdoText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoText.Margin = new System.Windows.Forms.Padding(4);
             this.rdoText.Name = "rdoText";
             this.rdoText.Size = new System.Drawing.Size(142, 23);
             this.rdoText.TabIndex = 0;
@@ -381,19 +378,67 @@
             // rtbNoiDung
             // 
             this.rtbNoiDung.Location = new System.Drawing.Point(33, 69);
-            this.rtbNoiDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbNoiDung.Margin = new System.Windows.Forms.Padding(4);
             this.rtbNoiDung.Name = "rtbNoiDung";
             this.rtbNoiDung.Size = new System.Drawing.Size(487, 107);
             this.rtbNoiDung.TabIndex = 2;
             this.rtbNoiDung.Text = "";
             // 
+            // cboKQ
+            // 
+            this.cboKQ.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboKQ.FormattingEnabled = true;
+            this.cboKQ.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
+            this.cboKQ.Location = new System.Drawing.Point(1226, 783);
+            this.cboKQ.Name = "cboKQ";
+            this.cboKQ.Size = new System.Drawing.Size(121, 32);
+            this.cboKQ.TabIndex = 24;
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.AutoSize = true;
+            this.btnClearAll.Image = ((System.Drawing.Image)(resources.GetObject("btnClearAll.Image")));
+            this.btnClearAll.Location = new System.Drawing.Point(1608, 91);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(44, 36);
+            this.btnClearAll.TabIndex = 25;
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
+            // 
+            // btnChonAnh
+            // 
+            this.btnChonAnh.Image = global::TestManagementApp.Properties.Resources.iconImage;
+            this.btnChonAnh.Location = new System.Drawing.Point(529, 143);
+            this.btnChonAnh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChonAnh.Name = "btnChonAnh";
+            this.btnChonAnh.Size = new System.Drawing.Size(45, 34);
+            this.btnChonAnh.TabIndex = 4;
+            this.btnChonAnh.UseVisualStyleBackColor = true;
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
+            // 
+            // picNoiDung
+            // 
+            this.picNoiDung.Location = new System.Drawing.Point(33, 69);
+            this.picNoiDung.Margin = new System.Windows.Forms.Padding(4);
+            this.picNoiDung.Name = "picNoiDung";
+            this.picNoiDung.Size = new System.Drawing.Size(488, 108);
+            this.picNoiDung.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNoiDung.TabIndex = 3;
+            this.picNoiDung.TabStop = false;
+            // 
             // frmTaoCauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1805, 846);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1782, 851);
+            this.Controls.Add(this.btnClearAll);
+            this.Controls.Add(this.cboKQ);
             this.Controls.Add(this.grbNoiDungDe);
-            this.Controls.Add(this.txtKQ);
             this.Controls.Add(this.lblKQ);
             this.Controls.Add(this.btnHoanThanh);
             this.Controls.Add(this.btnXoa);
@@ -445,18 +490,20 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanThanh;
         private System.Windows.Forms.Label lblKQ;
-        private System.Windows.Forms.TextBox txtKQ;
         private System.Windows.Forms.GroupBox grbNoiDungDe;
         private System.Windows.Forms.RadioButton rdoText;
         private System.Windows.Forms.RichTextBox rtbNoiDung;
         private System.Windows.Forms.RadioButton rdoImage;
         private System.Windows.Forms.PictureBox picNoiDung;
         private System.Windows.Forms.Button btnChonAnh;
+        private System.Windows.Forms.ComboBox cboKQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCauHoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaCauHoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDapAnA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDapAnB;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDapAnC;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDapAnD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKQ;
+        private System.Windows.Forms.Button btnClearAll;
     }
 }

@@ -37,28 +37,46 @@ namespace TestManagementApp
             clsDatabase.CloseConnection();
         }
 
+        // lấy các môn học ra từ cơ sở dữ liệu và hiển thị lên ComboBox
         private void LoadMonHoc()
         {
-            try
-            {
-                // Tạo câu lệnh truy vấn
-                string query = "SELECT MA_MON, TEN_MON FROM MON_HOC";
-                SqlCommand cmd = new SqlCommand(query, clsDatabase.con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+            if (clsDatabase.OpenConnection() == true)
+            { // kiểm tra xem đã kết nối đến CSDL chưa
+                try
+                {
+                    // Tạo câu lệnh truy vấn
+                    string query = "SELECT MA_MON, TEN_MON FROM MON_HOC";
+                    SqlCommand cmd = new SqlCommand(query, clsDatabase.con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
-                // Gán dữ liệu vào ComboBox môn học
-                cboMonHoc.DataSource = dt;
-                cboMonHoc.DisplayMember = "TEN_MON"; // Hiển thị tên môn học
-                cboMonHoc.ValueMember = "MA_MON";    // Lưu giá trị là mã môn học
+                    DataRow dr = dt.NewRow();
+                    dr["MA_MON"] = DBNull.Value;  // Giá trị null hoặc một giá trị không hợp lệ
+                    dr["TEN_MON"] = "Chọn môn học";
+                    dt.Rows.InsertAt(dr, 0);
+
+                    // Gán dữ liệu vào ComboBox môn học
+                    cboMonHoc.DataSource = dt;
+                    cboMonHoc.DisplayMember = "TEN_MON"; // Hiển thị tên môn học
+                    cboMonHoc.ValueMember = "MA_MON";    // Lưu giá trị là mã môn học
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi tải dữ liệu môn học: " + ex.Message);
+                }
+                finally
+                {
+                    clsDatabase.CloseConnection(); // Đóng kết nối sau khi thực thi
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lỗi khi tải dữ liệu môn học: " + ex.Message);
+                MessageBox.Show("Kết nối CSDL thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // tạo đề thi mới và lưu vào cơ sở dữ liệu
         private void btnTaoDe_Click(object sender, EventArgs e)
         {
             try
@@ -124,6 +142,7 @@ namespace TestManagementApp
             }
         }
 
+        // Tạo mã đề thi ngẫu nhiên
         public static string taoMaDeThi(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -138,10 +157,23 @@ namespace TestManagementApp
             return result.ToString();
         }
 
+        // chuyển đển form tạo câu hỏi
         private void btnThemCauHoi_Click(object sender, EventArgs e)
         {
             frmTaoCauHoi frmTaoCauHoi = new frmTaoCauHoi();
             frmTaoCauHoi.Show();
+        }
+
+        // thoát form
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); 
+            }
         }
     }
 }

@@ -48,5 +48,17 @@ namespace TestManagementApp
             frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
             frmDoiMatKhau.Show();
         }
+
+        private void btnThemDeThi_Click(object sender, EventArgs e)
+        {
+            frmTaoDeThi frmTaoDeThi = new frmTaoDeThi();
+            frmTaoDeThi.Show();
+        }
+
+        private void btnSuaCauHoi_Click(object sender, EventArgs e)
+        {
+            frmTaoCauHoi frmTaoCauHoi = new frmTaoCauHoi();
+            frmTaoCauHoi.Show();
+        }
     }
 }

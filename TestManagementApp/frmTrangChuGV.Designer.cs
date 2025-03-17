@@ -91,6 +91,7 @@
             resources.ApplyResources(this.btnThemDeThi, "btnThemDeThi");
             this.btnThemDeThi.Name = "btnThemDeThi";
             this.btnThemDeThi.UseVisualStyleBackColor = true;
+            this.btnThemDeThi.Click += new System.EventHandler(this.btnThemDeThi_Click);
             // 
             // btnSuaDeThi
             // 
@@ -103,6 +104,7 @@
             resources.ApplyResources(this.btnSuaCauHoi, "btnSuaCauHoi");
             this.btnSuaCauHoi.Name = "btnSuaCauHoi";
             this.btnSuaCauHoi.UseVisualStyleBackColor = true;
+            this.btnSuaCauHoi.Click += new System.EventHandler(this.btnSuaCauHoi_Click);
             // 
             // btnXoaDeThi
             // 
