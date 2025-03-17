@@ -16,7 +16,7 @@ namespace TestManagementApp
         public frmLamBaiThi(string maDeThi)
         {
             InitializeComponent();
-            maDeThi = maDeThi;
+            this.maDeThi = maDeThi;
         }
 
         private void frmLamBaiThi_Load(object sender, EventArgs e)

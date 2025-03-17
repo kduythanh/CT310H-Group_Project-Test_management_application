@@ -50,6 +50,9 @@
             // 
             // dgvKetQuaLamBai
             // 
+            this.dgvKetQuaLamBai.AllowUserToAddRows = false;
+            this.dgvKetQuaLamBai.AllowUserToDeleteRows = false;
+            this.dgvKetQuaLamBai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -61,6 +64,7 @@
             this.dgvKetQuaLamBai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKetQuaLamBai.Location = new System.Drawing.Point(28, 241);
             this.dgvKetQuaLamBai.Name = "dgvKetQuaLamBai";
+            this.dgvKetQuaLamBai.ReadOnly = true;
             this.dgvKetQuaLamBai.RowHeadersWidth = 51;
             this.dgvKetQuaLamBai.RowTemplate.Height = 24;
             this.dgvKetQuaLamBai.Size = new System.Drawing.Size(950, 384);
