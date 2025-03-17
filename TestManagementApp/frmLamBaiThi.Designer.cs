@@ -121,6 +121,7 @@
             this.btnNopBai.TabIndex = 15;
             this.btnNopBai.Text = "Nộp Bài và Kết Thúc";
             this.btnNopBai.UseVisualStyleBackColor = false;
+            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
             // 
             // btnCauSau
             // 
@@ -133,6 +134,7 @@
             this.btnCauSau.TabIndex = 13;
             this.btnCauSau.Text = "Câu Sau";
             this.btnCauSau.UseVisualStyleBackColor = false;
+            this.btnCauSau.Click += new System.EventHandler(this.BtnCauSau_Click);
             // 
             // btnCauTruoc
             // 
@@ -145,6 +147,7 @@
             this.btnCauTruoc.TabIndex = 12;
             this.btnCauTruoc.Text = "Câu Trước";
             this.btnCauTruoc.UseVisualStyleBackColor = false;
+            this.btnCauTruoc.Click += new System.EventHandler(this.BtnCauTruoc_Click);
             // 
             // btnThoat
             // 
@@ -157,6 +160,7 @@
             this.btnThoat.TabIndex = 11;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
             // 
             // label1
             // 
