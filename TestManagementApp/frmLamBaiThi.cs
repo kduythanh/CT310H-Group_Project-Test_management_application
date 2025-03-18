@@ -20,12 +20,16 @@ namespace TestManagementApp
         private List<CauHoi> cauHoiList;
         private int currentQuestionIndex = 0;
         private string maBaiThi;
+        private List<string> studentAnswers;
+
 
         public frmLamBaiThi(string maDeThi, string maTK)
         {
             InitializeComponent();
             this.maDeThi = maDeThi;
             this.maBaiThi = GenerateMaBaiThi(maTK, maDeThi);
+            // danh sách đáp án người dùng chọn
+            studentAnswers = new List<string>();
             LoadExamInfo();
             LoadQuestions();
             SetupCountdown();
@@ -79,6 +83,12 @@ namespace TestManagementApp
                     }
                 }
                 clsDatabase.CloseConnection();
+
+            }
+            // gán full null cho danh sách chọn đáp án khi mới mở đề thi
+            foreach (var _ in cauHoiList)
+            {
+                studentAnswers.Add(null);
             }
         }
 
@@ -113,15 +123,22 @@ namespace TestManagementApp
 
             var question = cauHoiList[currentQuestionIndex];
             lblCauHoi.Text = question.NoiDung;
-            radbtnA.Text = question.PhuongAnA;
-            radbtnB.Text = question.PhuongAnB;
-            radbtnC.Text = question.PhuongAnC;
-            radbtnD.Text = question.PhuongAnD;
+            radbtnA.Text = "A. " + question.PhuongAnA;
+            radbtnB.Text = "B. " + question.PhuongAnB;
+            radbtnC.Text = "C. " + question.PhuongAnC;
+            radbtnD.Text = "D. " + question.PhuongAnD;
 
             radbtnA.Checked = false;
             radbtnB.Checked = false;
             radbtnC.Checked = false;
             radbtnD.Checked = false;
+
+            // Load đáp án đã chọn nếu có
+            string selectedAnswer = studentAnswers[currentQuestionIndex];
+            if (selectedAnswer == "A") radbtnA.Checked = true;
+            if (selectedAnswer == "B") radbtnB.Checked = true;
+            if (selectedAnswer == "C") radbtnC.Checked = true;
+            if (selectedAnswer == "D") radbtnD.Checked = true;
 
             btnCauTruoc.Enabled = currentQuestionIndex > 0;
             btnCauSau.Enabled = currentQuestionIndex < cauHoiList.Count - 1;
@@ -129,6 +146,7 @@ namespace TestManagementApp
 
         private void BtnCauTruoc_Click(object sender, EventArgs e)
         {
+            SaveCurrentAnswer(); // ==> Thêm: Lưu đáp án trước khi chuyển câu
             if (currentQuestionIndex > 0)
             {
                 currentQuestionIndex--;
@@ -138,6 +156,7 @@ namespace TestManagementApp
 
         private void BtnCauSau_Click(object sender, EventArgs e)
         {
+            SaveCurrentAnswer();
             if (currentQuestionIndex < cauHoiList.Count - 1)
             {
                 currentQuestionIndex++;
@@ -157,16 +176,26 @@ namespace TestManagementApp
 
         private void btnNopBai_Click(object sender, EventArgs e)
         {
+            SaveCurrentAnswer(); // ==> Thêm: Lưu đáp án cuối cùng trước khi nộp
             SubmitExam();
+            
+        }
+
+        // hàm lưu đáp án khi chọn
+        private void SaveCurrentAnswer()
+        {
+            // ==> Thêm: Lưu phương án chọn vào danh sách studentAnswers
+            studentAnswers[currentQuestionIndex] = GetSelectedAnswer();
         }
 
         private void SubmitExam()
         {
             if (clsDatabase.OpenConnection())
             {
-                foreach (var question in cauHoiList)
+                for (int i = 0; i < cauHoiList.Count; i++)
                 {
-                    string studentAnswer = GetSelectedAnswer();
+                    var question = cauHoiList[i];
+                    string studentAnswer = studentAnswers[i]; // ✅ Lấy đúng đáp án đã lưu
                     string result = (studentAnswer == question.DapAn) ? "Correct" : "Incorrect";
 
                     string insertQuery = "INSERT INTO CHI_TIET_BAI_THI (MA_BAI_THI, MA_CAU_HOI, PHUONG_AN_CHON, KET_QUA) " +
@@ -176,16 +205,17 @@ namespace TestManagementApp
                     {
                         cmd.Parameters.AddWithValue("@maBaiThi", maBaiThi);
                         cmd.Parameters.AddWithValue("@maCauHoi", question.MaCauHoi);
-                        cmd.Parameters.AddWithValue("@phuongAnChon", studentAnswer ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@phuongAnChon", (object)studentAnswer ?? DBNull.Value);
                         cmd.Parameters.AddWithValue("@ketQua", result);
                         cmd.ExecuteNonQuery();
                     }
                 }
                 clsDatabase.CloseConnection();
             }
-
+            TinhDiemVaHienThi();
             DisplayResults();
         }
+
 
         private string GetSelectedAnswer()
         {
@@ -219,7 +249,7 @@ namespace TestManagementApp
                         {
                             string studentAnswer = reader["PHUONG_AN_CHON"]?.ToString();
                             string correctAnswer = reader["DAP_AN"].ToString();
-                            string status = studentAnswer == correctAnswer ? "Correct" : "Incorrect";
+                            string status = studentAnswer == correctAnswer ? "Đúng" : "Sai";
 
                             dgvDapAn.Rows.Add(stt, studentAnswer ?? "No Answer", correctAnswer, status);
                             stt++;
@@ -251,7 +281,49 @@ namespace TestManagementApp
 
             return newMaBaiThi;
         }
+
+        private void TinhDiemVaHienThi()
+        {
+            int soCauDung = 0;
+            int tongCau = 0;
+
+            if (clsDatabase.OpenConnection())
+            {
+                string query = "SELECT C.PHUONG_AN_CHON, Q.DAP_AN " +
+                               "FROM CHI_TIET_BAI_THI C " +
+                               "JOIN CAU_HOI Q ON C.MA_CAU_HOI = Q.MA_CAU_HOI " +
+                               "WHERE C.MA_BAI_THI = @maBaiThi";
+                using (SqlCommand cmd = new SqlCommand(query, clsDatabase.con))
+                {
+                    cmd.Parameters.AddWithValue("@maBaiThi", maBaiThi);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            tongCau++;
+                            string studentAnswer = reader["PHUONG_AN_CHON"]?.ToString();
+                            string correctAnswer = reader["DAP_AN"].ToString();
+
+                            if (!string.IsNullOrEmpty(studentAnswer) && studentAnswer == correctAnswer)
+                            {
+                                soCauDung++;
+                            }
+                        }
+                    }
+                }
+                clsDatabase.CloseConnection();
+            }
+
+            double diem = (tongCau > 0) ? ((double)soCauDung / tongCau * 10) : 0;
+            lblKetQua.Text = $"Điểm của bài thi: {diem:F2} điểm\nSố câu đúng của bài thi: {soCauDung}/{tongCau} câu";
+        }
+
+
+
+
     }
+
+
 
 
     public class CauHoi
@@ -266,20 +338,3 @@ namespace TestManagementApp
     }
 }
 
-//namespace TestManagementApp
-//{
-//    public partial class frmLamBaiThi: Form
-//    {
-//        private string maDeThi;
-//        public frmLamBaiThi(string maDeThi)
-//        {
-//            InitializeComponent();
-//            this.maDeThi = maDeThi;
-//        }
-
-//        private void frmLamBaiThi_Load(object sender, EventArgs e)
-//        {
-
-//        }
-//    }
-//}
