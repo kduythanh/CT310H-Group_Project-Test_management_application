@@ -18,6 +18,8 @@ namespace TestManagementApp
             InitializeComponent();
         }
 
+        public bool IsDataAdded { get; private set; }
+
         private void frmTaoDeThi_Load(object sender, EventArgs e)
         {
             if (clsDatabase.OpenConnection())
@@ -125,6 +127,7 @@ namespace TestManagementApp
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
+                        IsDataAdded = true;
                         MessageBox.Show("Tạo đề thi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

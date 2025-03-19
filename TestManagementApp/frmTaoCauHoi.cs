@@ -242,6 +242,7 @@ namespace TestManagementApp
             txtDapAnC.Clear();
             txtDapAnD.Clear();
             cboKQ.SelectedIndex = -1;
+
         }
 
         // load danh sách câu hỏi của đề thi đã chọn
@@ -282,6 +283,8 @@ namespace TestManagementApp
                 {
                     try
                     {
+                        btnXoa.Enabled = true;
+                        btnSua.Enabled = true;
                         string maCauHoi = row.Cells["colMaCauHoi"].Value?.ToString(); // Sử dụng tên cột hiển thị
                         if (string.IsNullOrEmpty(maCauHoi))
                         {
@@ -382,6 +385,7 @@ namespace TestManagementApp
                 {
                     if (dgvDanhSachCauHoi.SelectedRows.Count > 0)
                     {
+                        btnXoa.Enabled = true;
                         string maCauHoi = dgvDanhSachCauHoi.SelectedRows[0].Cells["colMaCauHoi"].Value?.ToString();
                         if (string.IsNullOrEmpty(maCauHoi))
                         {
@@ -430,6 +434,11 @@ namespace TestManagementApp
             txtDapAnB.Clear();
             txtDapAnC.Clear();
             txtDapAnD.Clear();
+            cboKQ.SelectedIndex = -1;
+            dgvDanhSachCauHoi.ClearSelection();
+
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
 
         // sửa các thông tin về câu hỏi mà người dùng đã chọn
@@ -441,6 +450,7 @@ namespace TestManagementApp
                 {
                     if (dgvDanhSachCauHoi.SelectedRows.Count > 0)
                     {
+                        btnSua.Enabled = true;
                         string maCauHoi = dgvDanhSachCauHoi.SelectedRows[0].Cells["colMaCauHoi"].Value?.ToString();
                         if (string.IsNullOrEmpty(maCauHoi))
                         {
@@ -488,7 +498,7 @@ namespace TestManagementApp
 
                         loadCauHoi();
                     }
-                    else
+                    else 
                     {
                         MessageBox.Show("Vui lòng chọn câu hỏi cần sửa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -503,6 +513,11 @@ namespace TestManagementApp
 
                 }
             }
+        }
+
+        private void btnHoanThanh_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

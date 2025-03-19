@@ -166,7 +166,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="txtGiaoVien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 34</value>
+    <value>586, 34</value>
   </data>
   <data name="txtGiaoVien.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -190,7 +190,7 @@
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
   <data name="btnDangXuat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>768, 32</value>
+    <value>871, 32</value>
   </data>
   <data name="btnDangXuat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -249,6 +249,111 @@
   <data name="&gt;&gt;lblDSDeThi.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="colTenMon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colTenMon.HeaderText" xml:space="preserve">
+    <value>Môn Học</value>
+  </data>
+  <data name="colTenMon.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colTenMon.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colMaTaiKhoan.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colMaTaiKhoan.HeaderText" xml:space="preserve">
+    <value>Mã Tài Khoản</value>
+  </data>
+  <data name="colMaTaiKhoan.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colMaTaiKhoan.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="colMaTaiKhoan.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colMaMon.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colMaMon.HeaderText" xml:space="preserve">
+    <value>Mã Môn</value>
+  </data>
+  <data name="colMaMon.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colMaMon.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="colMaMon.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colMaDeThi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colMaDeThi.HeaderText" xml:space="preserve">
+    <value>Mã Đề Thi</value>
+  </data>
+  <data name="colMaDeThi.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colMaDeThi.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="colMaDeThi.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colTenDeThi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colTenDeThi.HeaderText" xml:space="preserve">
+    <value>Tên Đề Thi</value>
+  </data>
+  <data name="colTenDeThi.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colTenDeThi.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colThoiLuong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colThoiLuong.HeaderText" xml:space="preserve">
+    <value>Thời Lượng</value>
+  </data>
+  <data name="colThoiLuong.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colThoiLuong.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colMatKhau.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colMatKhau.HeaderText" xml:space="preserve">
+    <value>Mật Khẩu</value>
+  </data>
+  <data name="colMatKhau.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colMatKhau.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="colTrangThai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="colTrangThai.HeaderText" xml:space="preserve">
+    <value>Trạng Thái</value>
+  </data>
+  <data name="colTrangThai.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colTrangThai.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="dgvDeThi.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 75</value>
   </data>
@@ -259,7 +364,7 @@
     <value>51</value>
   </data>
   <data name="dgvDeThi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 359</value>
+    <value>676, 351</value>
   </data>
   <data name="dgvDeThi.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -283,7 +388,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnThemDeThi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 75</value>
+    <value>724, 75</value>
   </data>
   <data name="btnThemDeThi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -309,9 +414,6 @@
   <data name="&gt;&gt;btnThemDeThi.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="btnSuaDeThi.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnSuaDeThi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
@@ -319,7 +421,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSuaDeThi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 153</value>
+    <value>724, 153</value>
   </data>
   <data name="btnSuaDeThi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -352,7 +454,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSuaCauHoi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 238</value>
+    <value>724, 238</value>
   </data>
   <data name="btnSuaCauHoi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -378,9 +480,6 @@
   <data name="&gt;&gt;btnSuaCauHoi.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnXoaDeThi.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="btnXoaDeThi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
@@ -388,7 +487,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnXoaDeThi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 321</value>
+    <value>724, 321</value>
   </data>
   <data name="btnXoaDeThi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -424,7 +523,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnXemKetQua.Location" type="System.Drawing.Point, System.Drawing">
-    <value>659, 399</value>
+    <value>724, 399</value>
   </data>
   <data name="btnXemKetQua.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -463,7 +562,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>923, 462</value>
+    <value>995, 466</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -482,51 +581,6 @@
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnDoiMatKhau.Name" xml:space="preserve">
-    <value>btnDoiMatKhau</value>
-  </data>
-  <data name="&gt;&gt;btnDoiMatKhau.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDoiMatKhau.Parent" xml:space="preserve">
-    <value>grpChucNangKhac</value>
-  </data>
-  <data name="&gt;&gt;btnDoiMatKhau.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="grpChucNangKhac.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="grpChucNangKhac.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 555</value>
-  </data>
-  <data name="grpChucNangKhac.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="grpChucNangKhac.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="grpChucNangKhac.Size" type="System.Drawing.Size, System.Drawing">
-    <value>921, 92</value>
-  </data>
-  <data name="grpChucNangKhac.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="grpChucNangKhac.Text" xml:space="preserve">
-    <value>Chức năng khác</value>
-  </data>
-  <data name="&gt;&gt;grpChucNangKhac.Name" xml:space="preserve">
-    <value>grpChucNangKhac</value>
-  </data>
-  <data name="&gt;&gt;grpChucNangKhac.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpChucNangKhac.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;grpChucNangKhac.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnDoiMatKhau.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
@@ -561,6 +615,39 @@
   <data name="&gt;&gt;btnDoiMatKhau.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="grpChucNangKhac.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="grpChucNangKhac.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 555</value>
+  </data>
+  <data name="grpChucNangKhac.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="grpChucNangKhac.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="grpChucNangKhac.Size" type="System.Drawing.Size, System.Drawing">
+    <value>993, 147</value>
+  </data>
+  <data name="grpChucNangKhac.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="grpChucNangKhac.Text" xml:space="preserve">
+    <value>Chức năng khác</value>
+  </data>
+  <data name="&gt;&gt;grpChucNangKhac.Name" xml:space="preserve">
+    <value>grpChucNangKhac</value>
+  </data>
+  <data name="&gt;&gt;grpChucNangKhac.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpChucNangKhac.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;grpChucNangKhac.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -568,13 +655,64 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1011, 681</value>
+    <value>1079, 733</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Trang chủ Giáo viên</value>
+  </data>
+  <data name="&gt;&gt;colTenMon.Name" xml:space="preserve">
+    <value>colTenMon</value>
+  </data>
+  <data name="&gt;&gt;colTenMon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colMaTaiKhoan.Name" xml:space="preserve">
+    <value>colMaTaiKhoan</value>
+  </data>
+  <data name="&gt;&gt;colMaTaiKhoan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colMaMon.Name" xml:space="preserve">
+    <value>colMaMon</value>
+  </data>
+  <data name="&gt;&gt;colMaMon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colMaDeThi.Name" xml:space="preserve">
+    <value>colMaDeThi</value>
+  </data>
+  <data name="&gt;&gt;colMaDeThi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colTenDeThi.Name" xml:space="preserve">
+    <value>colTenDeThi</value>
+  </data>
+  <data name="&gt;&gt;colTenDeThi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colThoiLuong.Name" xml:space="preserve">
+    <value>colThoiLuong</value>
+  </data>
+  <data name="&gt;&gt;colThoiLuong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colMatKhau.Name" xml:space="preserve">
+    <value>colMatKhau</value>
+  </data>
+  <data name="&gt;&gt;colMatKhau.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colTrangThai.Name" xml:space="preserve">
+    <value>colTrangThai</value>
+  </data>
+  <data name="&gt;&gt;colTrangThai.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmTrangChuGV</value>
