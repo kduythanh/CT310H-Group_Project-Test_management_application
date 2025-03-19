@@ -159,14 +159,7 @@ namespace TestManagementApp
 
         private void btnXemLichSu_Click(object sender, EventArgs e)
         {
-            if (cboChonDeThi.SelectedValue == null)
-            {
-                MessageBox.Show("Vui lòng chọn một đề thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string maDeThi = cboChonDeThi.SelectedValue.ToString();
-            frmXemLichSuLamBai lichSuForm = new frmXemLichSuLamBai(maDeThi);
+            frmXemLichSuLamBai lichSuForm = new frmXemLichSuLamBai();
             lichSuForm.Show();
         }
 
