@@ -71,6 +71,18 @@
     <Compile Include="frmThemSuaTaiKhoan.Designer.cs">
       <DependentUpon>frmThemSuaTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaoCauHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoCauHoi.Designer.cs">
+      <DependentUpon>frmTaoCauHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoDeThi.Designer.cs">
+      <DependentUpon>frmTaoDeThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTrangChuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     <EmbeddedResource Include="frmThemSuaTaiKhoan.resx">
       <DependentUpon>frmThemSuaTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoCauHoi.resx">
+      <DependentUpon>frmTaoCauHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoDeThi.resx">
+      <DependentUpon>frmTaoDeThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTrangChuAdmin.resx">
       <DependentUpon>frmTrangChuAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +157,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -152,6 +171,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Resources\iconImage.png" />
+    <Content Include="Properties\Resources\iconImage1.png" />
+    <Content Include="resources\iconImage.png" />
+    <Content Include="resources\iconImage1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

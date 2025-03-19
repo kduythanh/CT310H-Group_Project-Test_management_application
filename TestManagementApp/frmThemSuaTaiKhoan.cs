@@ -24,7 +24,7 @@ namespace TestManagementApp
             InitializeComponent();
             LoadRoleData();
             cboRole.SelectedIndex = 0;
-            lblTitle.Text = "Thêm Tài Khoản"; // Default title for add mode
+            lblTitle.Text = "Thêm Tài khoản"; // Default title for add mode
         }
 
         public frmThemSuaTaiKhoan(string accountName, string fullName, int role) : this()
@@ -43,7 +43,7 @@ namespace TestManagementApp
 
             
             txtAccountName.Enabled = false;
-            lblTitle.Text = "Sửa Tài Khoản"; // Edit Mode: Change title
+            lblTitle.Text = "Sửa Tài khoản"; // Edit Mode: Change title
         }
 
         private void frmThemSuaTaiKhoan_Load(object sender, EventArgs e)
@@ -60,8 +60,8 @@ namespace TestManagementApp
             roleTable.Columns.Add("RoleName", typeof(string));  
             roleTable.Columns.Add("RoleValue", typeof(int));   
 
-            roleTable.Rows.Add("Học Sinh", 0);
-            roleTable.Rows.Add("Giáo Viên", 1);
+            roleTable.Rows.Add("Học sinh", 0);
+            roleTable.Rows.Add("Giáo viên", 1);
 
             cboRole.DataSource = roleTable;
             cboRole.DisplayMember = "RoleName"; 
@@ -95,7 +95,7 @@ namespace TestManagementApp
         {
             if (string.IsNullOrWhiteSpace(txtFullName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text) || cboRole.SelectedIndex == -1)
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -116,7 +116,7 @@ namespace TestManagementApp
                     int exists = (int)checkCmd.ExecuteScalar();
                     if (exists > 0)
                     {
-                        MessageBox.Show("Tài khoản đã tồn tại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tài khoản đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -135,18 +135,18 @@ namespace TestManagementApp
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show(existingAccountName == null ? "Thêm tài khoản thành công!" : "Cập nhật tài khoản thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(existingAccountName == null ? "Thêm tài khoản thành công!" : "Cập nhật tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AccountAdded?.Invoke(this, EventArgs.Empty);
                     this.Close(); // Close the form after confirming
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi lưu tài khoản!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi lưu tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi truy xuất CSDL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
