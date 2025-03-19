@@ -14,11 +14,13 @@ namespace TestManagementApp
     public partial class frmXacNhanThi: Form
     {
         private string selectedMaDeThi;
+        private string selectedTenDeThi;
 
-        public frmXacNhanThi(string maDeThi)
+        public frmXacNhanThi(string maDeThi, string tenDeThi)
         {
             InitializeComponent();
             selectedMaDeThi = maDeThi;
+            selectedTenDeThi = tenDeThi;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -51,7 +53,7 @@ namespace TestManagementApp
 
             if (result != null && result.ToString() == enteredPassword)
             {
-                frmLamBaiThi examForm = new frmLamBaiThi(maDeThi, Session.TenTaiKhoan);
+                frmLamBaiThi examForm = new frmLamBaiThi(maDeThi, Session.TenTaiKhoan, selectedTenDeThi);
                 this.Hide();
                 examForm.Show();
             }

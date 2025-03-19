@@ -177,9 +177,9 @@ namespace TestManagementApp
                 MessageBox.Show("Vui lòng chọn một đề thi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            string tenDeThi = ((DataRowView)cboChonDeThi.SelectedItem)["TEN_DE_THI"].ToString();
             string maDeThi = cboChonDeThi.SelectedValue.ToString();
-            frmXacNhanThi confirmForm = new frmXacNhanThi(maDeThi);
+            frmXacNhanThi confirmForm = new frmXacNhanThi(maDeThi,tenDeThi);
             confirmForm.Show();
         }
 

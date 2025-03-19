@@ -23,13 +23,15 @@ namespace TestManagementApp
         private List<string> studentAnswers;
 
 
-        public frmLamBaiThi(string maDeThi, string maTK)
+        public frmLamBaiThi(string maDeThi, string maTK, string tenDeThi)
         {
             InitializeComponent();
             this.maDeThi = maDeThi;
             this.maBaiThi = GenerateMaBaiThi(maTK, maDeThi);
+            this.lbl_TenBaiThi.Text = tenDeThi;
             // danh sách đáp án người dùng chọn
             studentAnswers = new List<string>();
+            btnThoat.Enabled = false;
             LoadExamInfo();
             LoadQuestions();
             SetupCountdown();
@@ -122,7 +124,8 @@ namespace TestManagementApp
             if (cauHoiList.Count == 0) return;
 
             var question = cauHoiList[currentQuestionIndex];
-            lblCauHoi.Text = question.NoiDung;
+            lblCauHoi.Text = $"Câu {currentQuestionIndex + 1}. {question.NoiDung}";
+
             radbtnA.Text = "A. " + question.PhuongAnA;
             radbtnB.Text = "B. " + question.PhuongAnB;
             radbtnC.Text = "C. " + question.PhuongAnC;
@@ -142,11 +145,12 @@ namespace TestManagementApp
 
             btnCauTruoc.Enabled = currentQuestionIndex > 0;
             btnCauSau.Enabled = currentQuestionIndex < cauHoiList.Count - 1;
+
         }
 
         private void BtnCauTruoc_Click(object sender, EventArgs e)
         {
-            SaveCurrentAnswer(); // ==> Thêm: Lưu đáp án trước khi chuyển câu
+            SaveCurrentAnswer(); //Lưu đáp án trước khi chuyển câu
             if (currentQuestionIndex > 0)
             {
                 currentQuestionIndex--;
@@ -176,31 +180,34 @@ namespace TestManagementApp
 
         private void btnNopBai_Click(object sender, EventArgs e)
         {
-            SaveCurrentAnswer(); // ==> Thêm: Lưu đáp án cuối cùng trước khi nộp
+            SaveCurrentAnswer(); 
             SubmitExam();
-            
+            btnNopBai.Enabled = false;
+            btnThoat.Enabled = true;
+
         }
 
         // hàm lưu đáp án khi chọn
         private void SaveCurrentAnswer()
         {
-            // ==> Thêm: Lưu phương án chọn vào danh sách studentAnswers
+            // Lưu phương án chọn vào danh sách studentAnswers
             studentAnswers[currentQuestionIndex] = GetSelectedAnswer();
         }
 
         private void SubmitExam()
         {
+            // Chỉ lưu CHI_TIET_BAI_THI
+
             if (clsDatabase.OpenConnection())
             {
                 for (int i = 0; i < cauHoiList.Count; i++)
                 {
                     var question = cauHoiList[i];
-                    string studentAnswer = studentAnswers[i]; // ✅ Lấy đúng đáp án đã lưu
-                    string result = (studentAnswer == question.DapAn) ? "Correct" : "Incorrect";
+                    string studentAnswer = studentAnswers[i];
+                    string result = (studentAnswer == question.DapAn) ? "Đúng" : "Sai";
 
                     string insertQuery = "INSERT INTO CHI_TIET_BAI_THI (MA_BAI_THI, MA_CAU_HOI, PHUONG_AN_CHON, KET_QUA) " +
                                          "VALUES (@maBaiThi, @maCauHoi, @phuongAnChon, @ketQua)";
-
                     using (SqlCommand cmd = new SqlCommand(insertQuery, clsDatabase.con))
                     {
                         cmd.Parameters.AddWithValue("@maBaiThi", maBaiThi);
@@ -303,11 +310,8 @@ namespace TestManagementApp
                             tongCau++;
                             string studentAnswer = reader["PHUONG_AN_CHON"]?.ToString();
                             string correctAnswer = reader["DAP_AN"].ToString();
-
                             if (!string.IsNullOrEmpty(studentAnswer) && studentAnswer == correctAnswer)
-                            {
                                 soCauDung++;
-                            }
                         }
                     }
                 }
@@ -315,11 +319,22 @@ namespace TestManagementApp
             }
 
             double diem = (tongCau > 0) ? ((double)soCauDung / tongCau * 10) : 0;
-            lblKetQua.Text = $"Điểm của bài thi: {diem:F2} điểm\nSố câu đúng của bài thi: {soCauDung}/{tongCau} câu";
+
+            // *** CẬP NHẬT ĐIỂM VÀO BẢNG BAI_THI ***
+            if (clsDatabase.OpenConnection())
+            {
+                string updateQuery = "UPDATE BAI_THI SET DIEM = @diem WHERE MA_BAI_THI = @maBaiThi";
+                using (SqlCommand cmd = new SqlCommand(updateQuery, clsDatabase.con))
+                {
+                    cmd.Parameters.AddWithValue("@diem", diem);
+                    cmd.Parameters.AddWithValue("@maBaiThi", maBaiThi);
+                    cmd.ExecuteNonQuery();
+                }
+                clsDatabase.CloseConnection();
+            }
+
+            lblKetQua.Text = $"Điểm của bài thi: {diem:F2} điểm\nSố câu đúng: {soCauDung}/{tongCau} câu";
         }
-
-
-
 
     }
 

@@ -103,9 +103,9 @@
             this.lblKetQua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKetQua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKetQua.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lblKetQua.Location = new System.Drawing.Point(898, 571);
+            this.lblKetQua.Location = new System.Drawing.Point(857, 571);
             this.lblKetQua.Name = "lblKetQua";
-            this.lblKetQua.Size = new System.Drawing.Size(318, 85);
+            this.lblKetQua.Size = new System.Drawing.Size(366, 103);
             this.lblKetQua.TabIndex = 16;
             this.lblKetQua.Text = "Điểm của bài thi : ? điểm\r\nSố câu đúng của bài thi : ?/n câu";
             this.lblKetQua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -115,9 +115,9 @@
             this.btnNopBai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNopBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNopBai.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnNopBai.Location = new System.Drawing.Point(898, 699);
+            this.btnNopBai.Location = new System.Drawing.Point(1043, 699);
             this.btnNopBai.Name = "btnNopBai";
-            this.btnNopBai.Size = new System.Drawing.Size(318, 47);
+            this.btnNopBai.Size = new System.Drawing.Size(348, 47);
             this.btnNopBai.TabIndex = 15;
             this.btnNopBai.Text = "Nộp Bài và Kết Thúc";
             this.btnNopBai.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.btnThoat.BackColor = System.Drawing.Color.IndianRed;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnThoat.Location = new System.Drawing.Point(1240, 699);
+            this.btnThoat.Location = new System.Drawing.Point(54, 699);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(151, 47);
             this.btnThoat.TabIndex = 11;
@@ -194,7 +194,6 @@
             this.radbtnD.Name = "radbtnD";
             this.radbtnD.Size = new System.Drawing.Size(550, 85);
             this.radbtnD.TabIndex = 5;
-            this.radbtnD.TabStop = true;
             this.radbtnD.Text = "Đáp án D";
             this.radbtnD.UseVisualStyleBackColor = false;
             // 
@@ -206,7 +205,6 @@
             this.radbtnB.Name = "radbtnB";
             this.radbtnB.Size = new System.Drawing.Size(550, 85);
             this.radbtnB.TabIndex = 4;
-            this.radbtnB.TabStop = true;
             this.radbtnB.Text = "Đáp án B";
             this.radbtnB.UseVisualStyleBackColor = false;
             // 
@@ -218,7 +216,6 @@
             this.radbtnC.Name = "radbtnC";
             this.radbtnC.Size = new System.Drawing.Size(550, 85);
             this.radbtnC.TabIndex = 3;
-            this.radbtnC.TabStop = true;
             this.radbtnC.Text = "Đáp án C";
             this.radbtnC.UseVisualStyleBackColor = false;
             // 
@@ -230,7 +227,6 @@
             this.radbtnA.Name = "radbtnA";
             this.radbtnA.Size = new System.Drawing.Size(550, 85);
             this.radbtnA.TabIndex = 2;
-            this.radbtnA.TabStop = true;
             this.radbtnA.Text = "Đáp án A";
             this.radbtnA.UseVisualStyleBackColor = false;
             // 
