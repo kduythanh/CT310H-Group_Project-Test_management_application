@@ -170,7 +170,7 @@ namespace TestManagementApp
 
         private void BtnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure to quit this test?", "Confirm Exit",
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi bài thi không?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
