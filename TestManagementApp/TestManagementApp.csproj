@@ -59,11 +59,18 @@
     <Compile Include="frmDoiMatKhau.Designer.cs">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
+
     <Compile Include="frmLamBaiThi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLamBaiThi.Designer.cs">
       <DependentUpon>frmLamBaiThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuaDeThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaDeThi.Designer.cs">
+      <DependentUpon>frmSuaDeThi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemSuaTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -122,8 +129,12 @@
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="frmLamBaiThi.resx">
       <DependentUpon>frmLamBaiThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaDeThi.resx">
+      <DependentUpon>frmSuaDeThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemSuaTaiKhoan.resx">
       <DependentUpon>frmThemSuaTaiKhoan.cs</DependentUpon>
