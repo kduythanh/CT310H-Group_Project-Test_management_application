@@ -42,6 +42,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(342, 29);
             this.txtMatKhau.TabIndex = 14;
+            this.txtMatKhau.UseSystemPasswordChar = true;
             // 
             // btnThoat
             // 

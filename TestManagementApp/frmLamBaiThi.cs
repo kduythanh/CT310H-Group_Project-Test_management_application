@@ -26,15 +26,16 @@ namespace TestManagementApp
         public frmLamBaiThi(string maDeThi, string maTK, string tenDeThi)
         {
             InitializeComponent();
+            btnThoat.Enabled = false;
             this.maDeThi = maDeThi;
+            LoadExamInfo();
+            SetupCountdown();
             this.maBaiThi = GenerateMaBaiThi(maTK, maDeThi);
             this.lbl_TenBaiThi.Text = tenDeThi;
             // danh sách đáp án người dùng chọn
             studentAnswers = new List<string>();
-            btnThoat.Enabled = false;
-            LoadExamInfo();
             LoadQuestions();
-            SetupCountdown();
+            lblSoCauHoi.Text = "Đề thi gồm có " + cauHoiList.Count + " câu.";
         }
 
         private void frmLamBaiThi_Load(object sender, EventArgs e)
@@ -180,7 +181,8 @@ namespace TestManagementApp
 
         private void btnNopBai_Click(object sender, EventArgs e)
         {
-            SaveCurrentAnswer(); 
+            SaveCurrentAnswer();
+            countdownTimer.Stop();
             SubmitExam();
             btnNopBai.Enabled = false;
             btnThoat.Enabled = true;

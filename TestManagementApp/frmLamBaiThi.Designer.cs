@@ -31,6 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDapAn = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CauTraLoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DapAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblKetQua = new System.Windows.Forms.Label();
             this.btnNopBai = new System.Windows.Forms.Button();
             this.btnCauSau = new System.Windows.Forms.Button();
@@ -44,16 +48,17 @@
             this.radbtnA = new System.Windows.Forms.RadioButton();
             this.lblCauHoi = new System.Windows.Forms.Label();
             this.lbl_TenBaiThi = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CauTraLoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DapAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSoCauHoi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDapAn)).BeginInit();
             this.grpbox_CauHoi.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDapAn
             // 
+            this.dgvDapAn.AllowUserToAddRows = false;
+            this.dgvDapAn.AllowUserToDeleteRows = false;
+            this.dgvDapAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDapAn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -74,15 +79,49 @@
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDapAn.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDapAn.Location = new System.Drawing.Point(214, 464);
-            this.dgvDapAn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDapAn.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDapAn.MultiSelect = false;
             this.dgvDapAn.Name = "dgvDapAn";
+            this.dgvDapAn.ReadOnly = true;
             this.dgvDapAn.RowHeadersWidth = 51;
             this.dgvDapAn.RowTemplate.Height = 24;
             this.dgvDapAn.Size = new System.Drawing.Size(416, 142);
             this.dgvDapAn.TabIndex = 14;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 56;
+            // 
+            // CauTraLoi
+            // 
+            this.CauTraLoi.HeaderText = "Câu trả lời";
+            this.CauTraLoi.MinimumWidth = 6;
+            this.CauTraLoi.Name = "CauTraLoi";
+            this.CauTraLoi.ReadOnly = true;
+            this.CauTraLoi.Width = 97;
+            // 
+            // DapAn
+            // 
+            this.DapAn.HeaderText = "Đáp án";
+            this.DapAn.MinimumWidth = 6;
+            this.DapAn.Name = "DapAn";
+            this.DapAn.ReadOnly = true;
+            this.DapAn.Width = 77;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
+            this.TrangThai.Width = 96;
             // 
             // lblKetQua
             // 
@@ -104,7 +143,7 @@
             this.btnNopBai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNopBai.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnNopBai.Location = new System.Drawing.Point(782, 568);
-            this.btnNopBai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNopBai.Margin = new System.Windows.Forms.Padding(2);
             this.btnNopBai.Name = "btnNopBai";
             this.btnNopBai.Size = new System.Drawing.Size(261, 38);
             this.btnNopBai.TabIndex = 15;
@@ -118,7 +157,7 @@
             this.btnCauSau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCauSau.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCauSau.Location = new System.Drawing.Point(930, 464);
-            this.btnCauSau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCauSau.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauSau.Name = "btnCauSau";
             this.btnCauSau.Size = new System.Drawing.Size(113, 38);
             this.btnCauSau.TabIndex = 13;
@@ -132,7 +171,7 @@
             this.btnCauTruoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCauTruoc.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCauTruoc.Location = new System.Drawing.Point(40, 464);
-            this.btnCauTruoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCauTruoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauTruoc.Name = "btnCauTruoc";
             this.btnCauTruoc.Size = new System.Drawing.Size(113, 38);
             this.btnCauTruoc.TabIndex = 12;
@@ -146,7 +185,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThoat.Location = new System.Drawing.Point(40, 568);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(113, 38);
             this.btnThoat.TabIndex = 11;
@@ -174,9 +213,9 @@
             this.grpbox_CauHoi.Controls.Add(this.radbtnA);
             this.grpbox_CauHoi.Controls.Add(this.lblCauHoi);
             this.grpbox_CauHoi.Location = new System.Drawing.Point(4, 93);
-            this.grpbox_CauHoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbox_CauHoi.Margin = new System.Windows.Forms.Padding(2);
             this.grpbox_CauHoi.Name = "grpbox_CauHoi";
-            this.grpbox_CauHoi.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpbox_CauHoi.Padding = new System.Windows.Forms.Padding(2);
             this.grpbox_CauHoi.Size = new System.Drawing.Size(1072, 357);
             this.grpbox_CauHoi.TabIndex = 9;
             this.grpbox_CauHoi.TabStop = false;
@@ -186,7 +225,7 @@
             this.radbtnD.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radbtnD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radbtnD.Location = new System.Drawing.Point(626, 267);
-            this.radbtnD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radbtnD.Margin = new System.Windows.Forms.Padding(2);
             this.radbtnD.Name = "radbtnD";
             this.radbtnD.Size = new System.Drawing.Size(412, 69);
             this.radbtnD.TabIndex = 5;
@@ -198,7 +237,7 @@
             this.radbtnB.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radbtnB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radbtnB.Location = new System.Drawing.Point(626, 163);
-            this.radbtnB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radbtnB.Margin = new System.Windows.Forms.Padding(2);
             this.radbtnB.Name = "radbtnB";
             this.radbtnB.Size = new System.Drawing.Size(412, 69);
             this.radbtnB.TabIndex = 4;
@@ -210,7 +249,7 @@
             this.radbtnC.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radbtnC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radbtnC.Location = new System.Drawing.Point(36, 267);
-            this.radbtnC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radbtnC.Margin = new System.Windows.Forms.Padding(2);
             this.radbtnC.Name = "radbtnC";
             this.radbtnC.Size = new System.Drawing.Size(412, 69);
             this.radbtnC.TabIndex = 3;
@@ -222,7 +261,7 @@
             this.radbtnA.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.radbtnA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radbtnA.Location = new System.Drawing.Point(36, 163);
-            this.radbtnA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radbtnA.Margin = new System.Windows.Forms.Padding(2);
             this.radbtnA.Name = "radbtnA";
             this.radbtnA.Size = new System.Drawing.Size(412, 69);
             this.radbtnA.TabIndex = 2;
@@ -254,37 +293,15 @@
             this.lbl_TenBaiThi.Text = "Tên Bài thi";
             this.lbl_TenBaiThi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // STT
+            // lblSoCauHoi
             // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 125;
-            // 
-            // CauTraLoi
-            // 
-            this.CauTraLoi.HeaderText = "Câu trả lời";
-            this.CauTraLoi.MinimumWidth = 6;
-            this.CauTraLoi.Name = "CauTraLoi";
-            this.CauTraLoi.ReadOnly = true;
-            this.CauTraLoi.Width = 125;
-            // 
-            // DapAn
-            // 
-            this.DapAn.HeaderText = "Đáp án";
-            this.DapAn.MinimumWidth = 6;
-            this.DapAn.Name = "DapAn";
-            this.DapAn.ReadOnly = true;
-            this.DapAn.Width = 125;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.MinimumWidth = 6;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            this.TrangThai.Width = 125;
+            this.lblSoCauHoi.AutoSize = true;
+            this.lblSoCauHoi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoCauHoi.Location = new System.Drawing.Point(36, 67);
+            this.lblSoCauHoi.Name = "lblSoCauHoi";
+            this.lblSoCauHoi.Size = new System.Drawing.Size(183, 21);
+            this.lblSoCauHoi.TabIndex = 17;
+            this.lblSoCauHoi.Text = "Đề thi gồm có xxx câu.";
             // 
             // frmLamBaiThi
             // 
@@ -292,6 +309,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 616);
             this.ControlBox = false;
+            this.Controls.Add(this.lblSoCauHoi);
             this.Controls.Add(this.dgvDapAn);
             this.Controls.Add(this.lblKetQua);
             this.Controls.Add(this.btnNopBai);
@@ -301,13 +319,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpbox_CauHoi);
             this.Controls.Add(this.lbl_TenBaiThi);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLamBaiThi";
             this.Text = "Làm bài thi";
             this.Load += new System.EventHandler(this.frmLamBaiThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDapAn)).EndInit();
             this.grpbox_CauHoi.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -331,5 +350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CauTraLoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DapAn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private System.Windows.Forms.Label lblSoCauHoi;
     }
 }

@@ -149,8 +149,8 @@ namespace TestManagementApp
 
             if (reader.Read())
             {
-                txtGVRaDe.Text = "Giáo viên: " + reader["GiaoVien"].ToString();
-                txtThoiGianLam.Text = "Thời gian: " + reader["THOI_LUONG"].ToString() + " phút";
+                txtGVRaDe.Text = reader["GiaoVien"].ToString();
+                txtThoiGianLam.Text = reader["THOI_LUONG"].ToString();
             }
 
             reader.Close();

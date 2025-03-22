@@ -97,13 +97,17 @@
             // 
             // dgvDanhSachCauHoi
             // 
+            this.dgvDanhSachCauHoi.AllowUserToAddRows = false;
+            this.dgvDanhSachCauHoi.AllowUserToDeleteRows = false;
+            this.dgvDanhSachCauHoi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDanhSachCauHoi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDanhSachCauHoi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachCauHoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachCauHoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -116,7 +120,7 @@
             this.colKQ});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -138,7 +142,7 @@
             this.colCauHoi.HeaderText = "Câu hỏi";
             this.colCauHoi.MinimumWidth = 6;
             this.colCauHoi.Name = "colCauHoi";
-            this.colCauHoi.Width = 125;
+            this.colCauHoi.Width = 93;
             // 
             // colMaCauHoi
             // 
@@ -156,7 +160,7 @@
             this.colDapAnA.HeaderText = "Đáp án A";
             this.colDapAnA.MinimumWidth = 6;
             this.colDapAnA.Name = "colDapAnA";
-            this.colDapAnA.Width = 125;
+            this.colDapAnA.Width = 104;
             // 
             // colDapAnB
             // 
@@ -164,7 +168,7 @@
             this.colDapAnB.HeaderText = "Đáp án B";
             this.colDapAnB.MinimumWidth = 6;
             this.colDapAnB.Name = "colDapAnB";
-            this.colDapAnB.Width = 125;
+            this.colDapAnB.Width = 103;
             // 
             // colDapAnC
             // 
@@ -172,7 +176,7 @@
             this.colDapAnC.HeaderText = "Đáp án C";
             this.colDapAnC.MinimumWidth = 6;
             this.colDapAnC.Name = "colDapAnC";
-            this.colDapAnC.Width = 125;
+            this.colDapAnC.Width = 103;
             // 
             // colDapAnD
             // 
@@ -180,7 +184,7 @@
             this.colDapAnD.HeaderText = "Đáp án D";
             this.colDapAnD.MinimumWidth = 6;
             this.colDapAnD.Name = "colDapAnD";
-            this.colDapAnD.Width = 125;
+            this.colDapAnD.Width = 105;
             // 
             // colKQ
             // 
@@ -188,7 +192,7 @@
             this.colKQ.HeaderText = "Đáp án đúng";
             this.colKQ.MinimumWidth = 6;
             this.colKQ.Name = "colKQ";
-            this.colKQ.Width = 125;
+            this.colKQ.Width = 133;
             // 
             // lblTenDeThi
             // 
@@ -438,7 +442,7 @@
             "B",
             "C",
             "D"});
-            this.cboKQ.Location = new System.Drawing.Point(944, 635);
+            this.cboKQ.Location = new System.Drawing.Point(959, 637);
             this.cboKQ.Margin = new System.Windows.Forms.Padding(2);
             this.cboKQ.Name = "cboKQ";
             this.cboKQ.Size = new System.Drawing.Size(92, 29);

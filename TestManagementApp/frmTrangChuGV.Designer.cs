@@ -35,14 +35,6 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblDSDeThi = new System.Windows.Forms.Label();
             this.dgvDeThi = new System.Windows.Forms.DataGridView();
-            this.btnThemDeThi = new System.Windows.Forms.Button();
-            this.btnSuaDeThi = new System.Windows.Forms.Button();
-            this.btnSuaCauHoi = new System.Windows.Forms.Button();
-            this.btnXoaDeThi = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnXemKetQua = new System.Windows.Forms.Button();
-            this.grpChucNangKhac = new System.Windows.Forms.GroupBox();
-            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.colTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +43,14 @@
             this.colThoiLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThemDeThi = new System.Windows.Forms.Button();
+            this.btnSuaDeThi = new System.Windows.Forms.Button();
+            this.btnSuaCauHoi = new System.Windows.Forms.Button();
+            this.btnXoaDeThi = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXemKetQua = new System.Windows.Forms.Button();
+            this.grpChucNangKhac = new System.Windows.Forms.GroupBox();
+            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeThi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.grpChucNangKhac.SuspendLayout();
@@ -84,9 +84,11 @@
             // 
             this.dgvDeThi.AllowUserToAddRows = false;
             this.dgvDeThi.AllowUserToDeleteRows = false;
+            this.dgvDeThi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDeThi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -107,6 +109,54 @@
             this.dgvDeThi.Name = "dgvDeThi";
             this.dgvDeThi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDeThi_CellFormatting);
             this.dgvDeThi.SelectionChanged += new System.EventHandler(this.dgvDeThi_SelectionChanged);
+            // 
+            // colTenMon
+            // 
+            this.colTenMon.DataPropertyName = "TEN_MON";
+            resources.ApplyResources(this.colTenMon, "colTenMon");
+            this.colTenMon.Name = "colTenMon";
+            // 
+            // colMaTaiKhoan
+            // 
+            this.colMaTaiKhoan.DataPropertyName = "MA_TK";
+            resources.ApplyResources(this.colMaTaiKhoan, "colMaTaiKhoan");
+            this.colMaTaiKhoan.Name = "colMaTaiKhoan";
+            // 
+            // colMaMon
+            // 
+            this.colMaMon.DataPropertyName = "MA_MON";
+            resources.ApplyResources(this.colMaMon, "colMaMon");
+            this.colMaMon.Name = "colMaMon";
+            // 
+            // colMaDeThi
+            // 
+            this.colMaDeThi.DataPropertyName = "MA_DE_THI";
+            resources.ApplyResources(this.colMaDeThi, "colMaDeThi");
+            this.colMaDeThi.Name = "colMaDeThi";
+            // 
+            // colTenDeThi
+            // 
+            this.colTenDeThi.DataPropertyName = "TEN_DE_THI";
+            resources.ApplyResources(this.colTenDeThi, "colTenDeThi");
+            this.colTenDeThi.Name = "colTenDeThi";
+            // 
+            // colThoiLuong
+            // 
+            this.colThoiLuong.DataPropertyName = "THOI_LUONG";
+            resources.ApplyResources(this.colThoiLuong, "colThoiLuong");
+            this.colThoiLuong.Name = "colThoiLuong";
+            // 
+            // colMatKhau
+            // 
+            this.colMatKhau.DataPropertyName = "MAT_KHAU_DE";
+            resources.ApplyResources(this.colMatKhau, "colMatKhau");
+            this.colMatKhau.Name = "colMatKhau";
+            // 
+            // colTrangThai
+            // 
+            this.colTrangThai.DataPropertyName = "TRANG_THAI";
+            resources.ApplyResources(this.colTrangThai, "colTrangThai");
+            this.colTrangThai.Name = "colTrangThai";
             // 
             // btnThemDeThi
             // 
@@ -169,54 +219,6 @@
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
-            // 
-            // colTenMon
-            // 
-            this.colTenMon.DataPropertyName = "TEN_MON";
-            resources.ApplyResources(this.colTenMon, "colTenMon");
-            this.colTenMon.Name = "colTenMon";
-            // 
-            // colMaTaiKhoan
-            // 
-            this.colMaTaiKhoan.DataPropertyName = "MA_TK";
-            resources.ApplyResources(this.colMaTaiKhoan, "colMaTaiKhoan");
-            this.colMaTaiKhoan.Name = "colMaTaiKhoan";
-            // 
-            // colMaMon
-            // 
-            this.colMaMon.DataPropertyName = "MA_MON";
-            resources.ApplyResources(this.colMaMon, "colMaMon");
-            this.colMaMon.Name = "colMaMon";
-            // 
-            // colMaDeThi
-            // 
-            this.colMaDeThi.DataPropertyName = "MA_DE_THI";
-            resources.ApplyResources(this.colMaDeThi, "colMaDeThi");
-            this.colMaDeThi.Name = "colMaDeThi";
-            // 
-            // colTenDeThi
-            // 
-            this.colTenDeThi.DataPropertyName = "TEN_DE_THI";
-            resources.ApplyResources(this.colTenDeThi, "colTenDeThi");
-            this.colTenDeThi.Name = "colTenDeThi";
-            // 
-            // colThoiLuong
-            // 
-            this.colThoiLuong.DataPropertyName = "THOI_LUONG";
-            resources.ApplyResources(this.colThoiLuong, "colThoiLuong");
-            this.colThoiLuong.Name = "colThoiLuong";
-            // 
-            // colMatKhau
-            // 
-            this.colMatKhau.DataPropertyName = "MAT_KHAU_DE";
-            resources.ApplyResources(this.colMatKhau, "colMatKhau");
-            this.colMatKhau.Name = "colMatKhau";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.DataPropertyName = "TRANG_THAI";
-            resources.ApplyResources(this.colTrangThai, "colTrangThai");
-            this.colTrangThai.Name = "colTrangThai";
             // 
             // frmTrangChuGV
             // 
