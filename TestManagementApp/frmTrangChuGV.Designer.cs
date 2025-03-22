@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangChuGV));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHoTenGV = new System.Windows.Forms.Label();
             this.txtGiaoVien = new System.Windows.Forms.TextBox();
             this.btnDangXuat = new System.Windows.Forms.Button();
@@ -83,6 +82,8 @@
             // 
             // dgvDeThi
             // 
+            this.dgvDeThi.AllowUserToAddRows = false;
+            this.dgvDeThi.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -101,17 +102,11 @@
             this.colThoiLuong,
             this.colMatKhau,
             this.colTrangThai});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDeThi.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvDeThi, "dgvDeThi");
+            this.dgvDeThi.MultiSelect = false;
             this.dgvDeThi.Name = "dgvDeThi";
             this.dgvDeThi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDeThi_CellFormatting);
+            this.dgvDeThi.SelectionChanged += new System.EventHandler(this.dgvDeThi_SelectionChanged);
             // 
             // btnThemDeThi
             // 
@@ -159,6 +154,7 @@
             resources.ApplyResources(this.btnXemKetQua, "btnXemKetQua");
             this.btnXemKetQua.Name = "btnXemKetQua";
             this.btnXemKetQua.UseVisualStyleBackColor = true;
+            this.btnXemKetQua.Click += new System.EventHandler(this.btnXemKetQua_Click);
             // 
             // grpChucNangKhac
             // 

@@ -89,11 +89,7 @@ namespace TestManagementApp
                     MessageBox.Show("Vui lòng nhập tên đề thi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (!int.TryParse(txtThoiGian.Text, out int thoiGian) || thoiGian <= 0)
-                {
-                    MessageBox.Show("Thời gian làm bài phải là số nguyên dương!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                int thoiGian = (int)nmrThoiGian.Value;
                 if (cboMonHoc.SelectedIndex == 0) // Giả sử "Chọn môn học" ở index 0
                 {
                     MessageBox.Show("Vui lòng chọn môn học hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

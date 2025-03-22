@@ -205,5 +205,50 @@ namespace TestManagementApp
             }
 
         }
+        private void dgvDeThi_SelectionChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu có ít nhất một hàng được chọn
+            if (dgvDeThi.SelectedRows.Count > 0)
+            {
+                btnSuaDeThi.Enabled = true;
+                btnSuaCauHoi.Enabled = true;
+                btnXoaDeThi.Enabled = true;
+                btnXemKetQua.Enabled = true;
+            }
+            else
+            {
+                btnSuaDeThi.Enabled = false;
+                btnSuaCauHoi.Enabled = false;
+                btnXoaDeThi.Enabled = false;
+                btnXemKetQua.Enabled = false;
+            }
+        }
+
+        private void btnXemKetQua_Click(object sender, EventArgs e)
+        {
+            if (dgvDeThi.SelectedRows.Count > 0)
+            {
+                // Lấy dữ liệu từ hàng đang chọn
+                string maDeThi = dgvDeThi.SelectedRows[0].Cells["colMaDeThi"].Value?.ToString();
+                string tenDeThi = dgvDeThi.SelectedRows[0].Cells["colTenDeThi"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(maDeThi) && !string.IsNullOrEmpty(tenDeThi))
+                {
+                    // Mở form Xem Kết Quả và truyền dữ liệu
+                    this.Hide();
+                    frmXemKQLamBai frmXemKQ = new frmXemKQLamBai(maDeThi, tenDeThi);
+                    frmXemKQ.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể lấy thông tin đề thi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đề thi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
+
 }
