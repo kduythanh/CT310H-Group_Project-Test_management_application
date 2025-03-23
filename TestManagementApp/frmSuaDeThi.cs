@@ -20,13 +20,24 @@ namespace TestManagementApp
             InitializeComponent();
         }
 
+        public class TrangThai
+        {
+            public string Text { get; set; }
+            public int Value { get; set; }
+        }
+
         private void frmSuaDeThi_Load(object sender, EventArgs e)
         {
-            // Khởi tạo ComboBox với giá trị hiển thị và giá trị thực
-            cboTrangThai.Items.Add(new { Text = "đã đóng", Value = 0 });
-            cboTrangThai.Items.Add(new { Text = "đang mở", Value = 1 });
-            cboTrangThai.DisplayMember = "Text"; // Hiển thị "đã đóng" hoặc "đang mở"
+            var listTrangThai = new List<TrangThai>
+            {
+                new TrangThai { Text = "đã đóng", Value = 0 },
+                new TrangThai { Text = "đang mở", Value = 1 }
+            };
+
+            cboTrangThai.DisplayMember = "Text";
             cboTrangThai.ValueMember = "Value";
+            cboTrangThai.DataSource = listTrangThai;
+
             if (clsDatabase.OpenConnection())
             {
                 try
@@ -46,14 +57,9 @@ namespace TestManagementApp
                             txtMK.Text = reader["MAT_KHAU_DE"].ToString();
                             txtThoiLuong.Text = reader["THOI_LUONG"].ToString();
                             int trangThai = reader["TRANG_THAI"] != DBNull.Value ? Convert.ToInt32(reader["TRANG_THAI"]) : 0;
-                            if (trangThai == 0)
-                            {
-                                cboTrangThai.SelectedIndex = 0;
-                            }
-                            else
-                            {
-                                cboTrangThai.SelectedIndex = 1;
-                            }
+
+                            // Thiết lập SelectedIndex hoặc SelectedValue, không phải DisplayMember/ValueMember
+                            cboTrangThai.SelectedIndex = trangThai; // Vì giá trị 0 và 1 trùng với index 0 và 1
                         }
                     }
                 }
@@ -65,7 +71,6 @@ namespace TestManagementApp
                 {
                     clsDatabase.CloseConnection();
                 }
-
             }
         }
 
@@ -90,26 +95,23 @@ namespace TestManagementApp
                         return;
                     }
 
-                    // Lấy giá trị thực của TRANG_THAI từ ComboBox
-                    int trangThai;
-                    if (cboTrangThai.SelectedValue != null)
-                    {
-                        trangThai = Convert.ToInt32(cboTrangThai.SelectedValue);
-                    }
-                    else
-                    {
-                        trangThai = 0;
-                    }
 
+                    // Tiến hành cập nhật nếu không vi phạm điều kiện
                     SqlCommand cmd = new SqlCommand(
                         "UPDATE DE_THI SET TEN_DE_THI = @TEN_DE_THI, MAT_KHAU_DE = @MAT_KHAU_DE, THOI_LUONG = @THOI_LUONG, TRANG_THAI = @TRANG_THAI " +
                         "WHERE MA_DE_THI = @MA_DE_THI", clsDatabase.con);
 
+                    int trangThaiHienTai = 0;
+                    if (cboTrangThai.SelectedItem != null)
+                    {
+                        trangThaiHienTai = ((TrangThai)cboTrangThai.SelectedItem).Value;                     
+                    }
+
                     cmd.Parameters.AddWithValue("@MA_DE_THI", maDeThi);
                     cmd.Parameters.AddWithValue("@TEN_DE_THI", txtTenDeThi.Text);
                     cmd.Parameters.AddWithValue("@MAT_KHAU_DE", txtMK.Text);
-                    cmd.Parameters.AddWithValue("@THOI_LUONG", thoiLuong); 
-                    cmd.Parameters.AddWithValue("@TRANG_THAI", trangThai); 
+                    cmd.Parameters.AddWithValue("@THOI_LUONG", thoiLuong);
+                    cmd.Parameters.AddWithValue("@TRANG_THAI", trangThaiHienTai);
 
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
