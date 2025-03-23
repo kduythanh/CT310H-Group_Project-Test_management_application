@@ -90,7 +90,7 @@ namespace TestManagementApp
                 return;
             }
 
-            string query = "SELECT MA_DE_THI, TEN_DE_THI FROM DE_THI WHERE MA_MON = @maMon";
+            string query = "SELECT MA_DE_THI, TEN_DE_THI FROM DE_THI WHERE MA_MON = @maMon AND TRANG_THAI = 1";
             SqlCommand cmd = new SqlCommand(query, clsDatabase.con);
             cmd.Parameters.AddWithValue("@maMon", maMon);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -99,10 +99,28 @@ namespace TestManagementApp
 
             // Disable event before updating the data source
             cboChonDeThi.SelectedIndexChanged -= cboChonDeThi_SelectedIndexChanged;
-            cboChonDeThi.DataSource = dt;
-            cboChonDeThi.DisplayMember = "TEN_DE_THI";
-            cboChonDeThi.ValueMember = "MA_DE_THI";
-            cboChonDeThi.SelectedIndex = -1; // Ensure default state
+            if (dt.Rows.Count == 0)
+            {
+                // Nếu không có đề thi, tạo một DataTable mới với một dòng mặc định
+                DataTable dtDefault = new DataTable();
+                dtDefault.Columns.Add("MA_DE_THI", typeof(string));
+                dtDefault.Columns.Add("TEN_DE_THI", typeof(string));
+                dtDefault.Rows.Add("", "Chưa có đề thi");
+
+                cboChonDeThi.DataSource = dtDefault;
+                cboChonDeThi.DisplayMember = "TEN_DE_THI";
+                cboChonDeThi.ValueMember = "MA_DE_THI";
+
+                // Đảm bảo button Vào Thi bị vô hiệu hóa
+                btnVaoThi.Enabled = false;
+            }
+            else
+            {
+                cboChonDeThi.DataSource = dt;
+                cboChonDeThi.DisplayMember = "TEN_DE_THI";
+                cboChonDeThi.ValueMember = "MA_DE_THI";
+                cboChonDeThi.SelectedIndex = -1; // Ensure default state
+            }
             cboChonDeThi.SelectedIndexChanged += cboChonDeThi_SelectedIndexChanged;
 
             clsDatabase.CloseConnection();
@@ -124,6 +142,14 @@ namespace TestManagementApp
                 return;
 
             string maDeThi = cboChonDeThi.SelectedValue.ToString();
+            if (string.IsNullOrEmpty(maDeThi))
+            {
+                // Xóa các thông tin giáo viên và thời gian
+                txtGVRaDe.Text = "";
+                txtThoiGianLam.Text = "";
+                btnVaoThi.Enabled = false;
+                return;
+            }
             LoadGiaoVienVaThoiGian(maDeThi);
             UpdateVaoThiButtonState();
         }
