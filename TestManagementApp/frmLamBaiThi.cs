@@ -80,7 +80,8 @@ namespace TestManagementApp
                                 PhuongAnB = reader["PHUONG_AN_B"].ToString(),
                                 PhuongAnC = reader["PHUONG_AN_C"].ToString(),
                                 PhuongAnD = reader["PHUONG_AN_D"].ToString(),
-                                DapAn = reader["DAP_AN"].ToString()
+                                DapAn = reader["DAP_AN"].ToString(),
+                                LoaiNoiDung = Convert.ToInt32(reader["LOAI_NOI_DUNG"])
                             });
                         }
                     }
@@ -125,8 +126,28 @@ namespace TestManagementApp
             if (cauHoiList.Count == 0) return;
 
             var question = cauHoiList[currentQuestionIndex];
-            lblCauHoi.Text = $"Câu {currentQuestionIndex + 1}. {question.NoiDung}";
-
+            if (question.LoaiNoiDung == 0)
+            {
+                lblCauHoi.Visible = true;
+                picNoiDung.Visible = false;
+                lblCauHoi.Text = $"Câu {currentQuestionIndex + 1}. {question.NoiDung}";
+            }
+            else if (question.LoaiNoiDung == 1)
+            {
+                //lblCauHoi.Visible = false;
+                lblCauHoi.Text = $"Câu {currentQuestionIndex + 1}. ";
+                picNoiDung.Visible = true;
+                try
+                {
+                    picNoiDung.Image = Image.FromFile(question.NoiDung); // Load image from file path
+                    picNoiDung.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust image to fit PictureBox
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Không thể tải hình ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    picNoiDung.Image = null; // Clear the PictureBox if image loading fails
+                }
+            }
             radbtnA.Text = "A. " + question.PhuongAnA;
             radbtnB.Text = "B. " + question.PhuongAnB;
             radbtnC.Text = "C. " + question.PhuongAnC;
@@ -352,6 +373,7 @@ namespace TestManagementApp
         public string PhuongAnC { get; set; }
         public string PhuongAnD { get; set; }
         public string DapAn { get; set; }
+        public int LoaiNoiDung { get; set; }
     }
 }
 
