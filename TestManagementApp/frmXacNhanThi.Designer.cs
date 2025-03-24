@@ -101,7 +101,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmXacNhanThi";
             this.Text = "Đăng nhập làm bài";
-            this.Load += new System.EventHandler(this.frmXacNhanThi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

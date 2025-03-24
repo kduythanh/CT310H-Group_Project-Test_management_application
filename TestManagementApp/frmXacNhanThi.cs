@@ -62,10 +62,5 @@ namespace TestManagementApp
                 MessageBox.Show("Mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void frmXacNhanThi_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

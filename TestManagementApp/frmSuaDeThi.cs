@@ -55,7 +55,16 @@ namespace TestManagementApp
                             txtMonHoc.Text = reader["TEN_MON"].ToString();
                             txtTenDeThi.Text = reader["TEN_DE_THI"].ToString();
                             txtMK.Text = reader["MAT_KHAU_DE"].ToString();
-                            txtThoiLuong.Text = reader["THOI_LUONG"].ToString();
+                            //txtThoiLuong.Text = reader["THOI_LUONG"].ToString();
+                            int thoiLuong;
+                            if (int.TryParse(reader["THOI_LUONG"].ToString(), out thoiLuong))
+                            {
+                                nmrThoiLuong.Value = thoiLuong;
+                            }
+                            else
+                            {
+                                nmrThoiLuong.Value = nmrThoiLuong.Minimum;
+                            }
                             int trangThai = reader["TRANG_THAI"] != DBNull.Value ? Convert.ToInt32(reader["TRANG_THAI"]) : 0;
 
                             // Thiết lập SelectedIndex hoặc SelectedValue, không phải DisplayMember/ValueMember
@@ -88,12 +97,7 @@ namespace TestManagementApp
                     }
 
                     // Kiểm tra và chuyển đổi giá trị của THOI_LUONG
-                    int thoiLuong;
-                    if (!int.TryParse(txtThoiLuong.Text, out thoiLuong))
-                    {
-                        MessageBox.Show("Thời lượng phải là một số hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    int thoiLuong = (int)nmrThoiLuong.Value;
 
 
                     // Tiến hành cập nhật nếu không vi phạm điều kiện
