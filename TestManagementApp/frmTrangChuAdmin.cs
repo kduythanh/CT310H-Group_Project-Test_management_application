@@ -125,14 +125,20 @@ namespace TestManagementApp
 
             string accountName = dgvDSTaiKhoan.SelectedRows[0].Cells["MA_TK"].Value.ToString();
 
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản với MA_TK = {accountName} không?","Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa tài khoản {accountName} không?","Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 try
                 {
                     clsDatabase.OpenConnection();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM TAI_KHOAN WHERE MA_TK = @MA_TK", clsDatabase.con);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM DE_THI WHERE MA_TK = @MA_TK", clsDatabase.con);
+                    cmd.Parameters.AddWithValue("@MA_TK", accountName);
+                    cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE FROM BAI_THI WHERE MA_TK = @MA_TK", clsDatabase.con);
+                    cmd.Parameters.AddWithValue("@MA_TK", accountName);
+                    cmd.ExecuteNonQuery();
+                    cmd = new SqlCommand("DELETE FROM TAI_KHOAN WHERE MA_TK = @MA_TK", clsDatabase.con);
                     cmd.Parameters.AddWithValue("@MA_TK", accountName);
 
                     int rowsAffected = cmd.ExecuteNonQuery();

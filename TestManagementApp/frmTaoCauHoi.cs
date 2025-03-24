@@ -392,8 +392,18 @@ namespace TestManagementApp
                             MessageBox.Show("Không tìm thấy mã câu hỏi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
-                        string query = "DELETE FROM CAU_HOI WHERE MA_CAU_HOI = @MA_CAU_HOI";
+                        // Hiển thị hộp thoại xác nhận trước khi xóa
+                        DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa câu hỏi này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.No) return;
+                        // Xóa ở bảng CHI_TIET_BAI_THI trước
+                        string query = "DELETE FROM CHI_TIET_BAI_THI WHERE MA_CAU_HOI = @MA_CAU_HOI";
                         SqlCommand cmd = new SqlCommand(query, clsDatabase.con);
+                        cmd.Parameters.AddWithValue("@MA_CAU_HOI", maCauHoi);
+                        cmd.ExecuteNonQuery();
+                        // Xóa ở bảng CAU_HOI
+                        query = "DELETE FROM CAU_HOI WHERE MA_CAU_HOI = @MA_CAU_HOI";
+                        cmd = new SqlCommand(query, clsDatabase.con);
                         cmd.Parameters.AddWithValue("@MA_CAU_HOI", maCauHoi);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Xóa câu hỏi thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
