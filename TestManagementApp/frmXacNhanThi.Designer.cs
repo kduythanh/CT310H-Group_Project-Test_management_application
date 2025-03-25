@@ -38,7 +38,7 @@
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(124, 83);
+            this.txtMatKhau.Location = new System.Drawing.Point(127, 65);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(342, 29);
             this.txtMatKhau.TabIndex = 14;
@@ -48,7 +48,7 @@
             // 
             this.btnThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(281, 143);
+            this.btnThoat.Location = new System.Drawing.Point(278, 123);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(110, 31);
             this.btnThoat.TabIndex = 13;
@@ -59,7 +59,7 @@
             // btnLamBai
             // 
             this.btnLamBai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamBai.Location = new System.Drawing.Point(97, 143);
+            this.btnLamBai.Location = new System.Drawing.Point(94, 123);
             this.btnLamBai.Name = "btnLamBai";
             this.btnLamBai.Size = new System.Drawing.Size(110, 31);
             this.btnLamBai.TabIndex = 12;
@@ -71,7 +71,7 @@
             // 
             this.lblTenTaiKhoan.AutoSize = true;
             this.lblTenTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenTaiKhoan.Location = new System.Drawing.Point(23, 86);
+            this.lblTenTaiKhoan.Location = new System.Drawing.Point(26, 68);
             this.lblTenTaiKhoan.Name = "lblTenTaiKhoan";
             this.lblTenTaiKhoan.Size = new System.Drawing.Size(82, 21);
             this.lblTenTaiKhoan.TabIndex = 10;
@@ -79,19 +79,20 @@
             // 
             // lblHeading
             // 
-            this.lblHeading.AutoSize = true;
+            this.lblHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblHeading.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeading.Location = new System.Drawing.Point(50, 19);
+            this.lblHeading.Location = new System.Drawing.Point(0, 0);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(399, 30);
+            this.lblHeading.Size = new System.Drawing.Size(490, 50);
             this.lblHeading.TabIndex = 8;
             this.lblHeading.Text = "Vui lòng nhập mật khẩu để làm bài thi!";
+            this.lblHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmXacNhanThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 199);
+            this.ClientSize = new System.Drawing.Size(490, 177);
             this.ControlBox = false;
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.btnThoat);
