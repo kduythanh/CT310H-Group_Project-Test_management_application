@@ -16,7 +16,7 @@ namespace TestManagementApp
             try
             {
                 // Sửa lại tên server cho phù hợp với mỗi máy
-                con = new SqlConnection("Server=DESKTOP-UCGD4BF\\SQLEXPRESS;Database=QL_TRAC_NGHIEM;Integrated Security=true");
+                con = new SqlConnection("Server=ANHAI\\SQLEXPRESS;Database=QL_TRAC_NGHIEM;Integrated Security=true");
                 con.Open();
             }
             catch (Exception)

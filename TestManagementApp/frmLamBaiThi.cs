@@ -203,6 +203,8 @@ namespace TestManagementApp
         private void btnNopBai_Click(object sender, EventArgs e)
         {
             SaveCurrentAnswer();
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn nộp bài không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+if (result == DialogResult.No) return;
             countdownTimer.Stop();
             SubmitExam();
             btnNopBai.Enabled = false;
